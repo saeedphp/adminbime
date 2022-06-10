@@ -83,6 +83,20 @@ a{
     text-align: right;
 }
 
+.user_page form select{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 2px 2px 9px #ccc;
+    padding: .5rem 1rem;
+    width: 100%;
+    text-align: right;
+    font-family: IRANSans;
+}
+
+.user_page form select option{
+    font-family: IRANSans;
+}
+
 .user_page form input::placeholder{
     font-family: IRANSans;
 }
