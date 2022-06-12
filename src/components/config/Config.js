@@ -1136,6 +1136,16 @@ export const Elements = {
                 type: "number"
             },
             {
+                name: "customFileId",
+                title: "فایل pdf",
+                type: "pdf",
+                get: {
+                    field: "imageGetResponse",
+                    value: "id",
+                    url: "url"
+                }
+            },
+            {
                 name: "isActive",
                 title: "فعال بودن",
                 type: "boolean"
@@ -2041,6 +2051,12 @@ export const Elements = {
                 name: "isActive",
                 title: "فعال بودن",
                 type: "boolean"
+            },
+            {
+                name: "cultureLcid",
+                title: "فعال بودن",
+                type: "hidden",
+                default: 1065,
             },
         ]
     },
