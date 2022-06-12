@@ -2389,4 +2389,178 @@ export const Elements = {
             },
         ]
     },
+    PersonalUsers: {
+        list_route: "cms/PersonnelAndRepresentation/list/personnel?pageIndex=0&pageSize=100",
+        detail_route: "cms/PersonnelAndRepresentation/",
+        create_route: "cms/PersonnelAndRepresentation/",
+        list_fields: [
+            {
+                name: "firstName",
+                title: "نام"
+            },
+            {
+                name: "lastName",
+                title: "نام خانوادگی"
+            },
+            {
+                name: "phoneNumber",
+                title: "شماره همراه"
+            },
+            {
+                name: "email",
+                title: "ایمیل"
+            },
+            {
+                name: "userName",
+                title: "نام کاربری",
+            },
+            {
+                name: "accessLevel",
+                title: "نوع کاربر",
+            },
+        ],
+        form_fields: [
+            {
+                name: "title",
+                title: "عنوان"
+            },
+            {
+                name: "url",
+                title: "آدرس"
+            },
+            {
+                name: "parentId",
+                title: "والد",
+                type: "dropdown",
+                dropdown: {
+                    route: "cms/menuitem/list/SecendFooterList",
+                    value: "id",
+                    text: "title"
+                }
+            },
+            {
+                name: "openInNewTab",
+                title: "تب جدید",
+                type: "boolean"
+            },
+            {
+                name: "firstFooter",
+                title: "در فوتر اول",
+                type: "boolean"
+            },
+            {
+                name: "secendFooter",
+                title: "در فوتر دوم",
+                type: "boolean"
+            },
+            {
+                name: "thirdFooter",
+                title: "در فوتر سوم",
+                type: "boolean"
+            },
+            {
+                name: "ordering",
+                title: "ترتیب",
+                type: "number"
+            },
+            {
+                name: "isActive",
+                title: "فعال بودن",
+                type: "boolean"
+            },
+            {
+                name: "cultureLcid",
+                title: "شناسه زبان",
+                type: "hidden",
+                default: 1065
+            },
+        ]
+    },
+    VendorsUsers: {
+        list_route: "cms/PersonnelAndRepresentation/Representation?pageIndex=0&pageSize=100",
+        detail_route: "cms/PersonnelAndRepresentation/",
+        create_route: "cms/PersonnelAndRepresentation/",
+        list_fields: [
+            {
+                name: "firstName",
+                title: "نام"
+            },
+            {
+                name: "lastName",
+                title: "نام خانوادگی"
+            },
+            {
+                name: "phoneNumber",
+                title: "شماره همراه"
+            },
+            {
+                name: "email",
+                title: "ایمیل"
+            },
+            {
+                name: "userName",
+                title: "نام کاربری",
+            },
+            {
+                name: "accessLevel",
+                title: "نوع کاربر",
+            },
+        ],
+        form_fields: [
+            {
+                name: "title",
+                title: "عنوان"
+            },
+            {
+                name: "url",
+                title: "آدرس"
+            },
+            {
+                name: "parentId",
+                title: "والد",
+                type: "dropdown",
+                dropdown: {
+                    route: "cms/menuitem/list/SecendFooterList",
+                    value: "id",
+                    text: "title"
+                }
+            },
+            {
+                name: "openInNewTab",
+                title: "تب جدید",
+                type: "boolean"
+            },
+            {
+                name: "firstFooter",
+                title: "در فوتر اول",
+                type: "boolean"
+            },
+            {
+                name: "secendFooter",
+                title: "در فوتر دوم",
+                type: "boolean"
+            },
+            {
+                name: "thirdFooter",
+                title: "در فوتر سوم",
+                type: "boolean"
+            },
+            {
+                name: "ordering",
+                title: "ترتیب",
+                type: "number"
+            },
+            {
+                name: "isActive",
+                title: "فعال بودن",
+                type: "boolean"
+            },
+            {
+                name: "cultureLcid",
+                title: "شناسه زبان",
+                type: "hidden",
+                default: 1065
+            },
+        ]
+    },
 }

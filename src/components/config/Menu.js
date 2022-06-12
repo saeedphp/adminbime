@@ -159,4 +159,12 @@ export const Menu = [
         name: "users",
         title: "ایجاد کاربران"
     },
+    {
+        name: "PersonalUsers",
+        title: "کاربران پرسنل"
+    },
+    {
+        name: "VendorsUsers",
+        title: "کاربران نماینده"
+    },
 ]
