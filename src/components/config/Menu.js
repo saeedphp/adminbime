@@ -19,10 +19,10 @@ export const Menu = [
         name: "BlogPosts",
         title: "مقالات"
     },
-    /*{
+    {
         name: "blogTypes",
         title: "نوع خبر و رویدادها"
-    },*/
+    },
     {
         name: "faqs",
         title: "سوالات متداول"
@@ -30,6 +30,10 @@ export const Menu = [
     {
         name: "healthCenters",
         title: "مراکز درمانی"
+    },
+    {
+        name: "HealthCenterPdfs",
+        title: "pdf مراکز درمانی"
     },
     {
         name: "Representationes",

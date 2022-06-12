@@ -239,10 +239,20 @@ export const Elements = {
                 }
             },
             {
-                name: "blogCategoryIds",
+                name: "blogTypeId",
+                title: "نوع بلاگ",
+                type: "dropdown",
+                dropdown: {
+                    route: "cms/blogtype/active",
+                    value: "id",
+                    text: "name"
+                }
+            },
+            {
+                name: "blogCategoryId",
                 title: "دسته",
-                type: "multiple",
-                multiple: {
+                type: "dropdown",
+                dropdown: {
                     route: "cms/blogcategory/list/active",
                     value: "id",
                     text: "name"
@@ -382,6 +392,69 @@ export const Elements = {
                 get: {
                     field: "addressGetResponseDto",
                     value: "id",
+                }
+            },
+            {
+                name: "ordering",
+                title: "ترتیب",
+                type: "number"
+            },
+            {
+                name: "isActive",
+                title: "فعال بودن",
+                type: "boolean"
+            },
+            {
+                name: "cultureLcid",
+                title: "شناسه زبان",
+                type: "hidden",
+                default: 1065
+            }
+        ]
+    },
+    HealthCenterPdfs: {
+        list_route: "cms/healthCenterPdf/active?pageIndex=0&pageSize=100",
+        detail_route: "cms/healthCenter/",
+        create_route: "cms/healthCenter/",
+        list_fields: [
+            {
+                name: "title",
+                title: "عنوان فایل"
+            },
+            {
+                name: "stateGetResponseDto",
+                title: "نام استان",
+                type: "object",
+                object_field: "name"
+            },
+        ],
+        form_fields: [
+            {
+                name: "title",
+                title: "عنوان فایل"
+            },
+            {
+                name: "stateId",
+                title: "استان",
+                type: "dropdown",
+                dropdown: {
+                    route: "basicdata/state/active",
+                    value: "id",
+                    text: "name"
+                },
+                get: {
+                    field: "stateInfo",
+                    value: "id",
+                }
+            },
+            {
+                name: "customFileId",
+                title: "فایل pdf",
+                type: "pdf",
+                get: {
+                    field: "imageGetResponse",
+                    value: "id",
+                    url: "url"
                 }
             },
             {
@@ -1886,10 +1959,14 @@ export const Elements = {
         ]
     },
     MenuItems: {
-        list_route: "cms/menuitem/list",
-        detail_route: "cms/vision/",
-        create_route: "cms/vision/",
+        list_route: "cms/menuitem/list/MenuItemList",
+        detail_route: "cms/menuitem/",
+        create_route: "cms/menuitem/",
         list_fields: [
+            {
+                name: "id",
+                title: "ردیف"
+            },
             {
                 name: "title",
                 title: "عنوان"
@@ -1922,9 +1999,38 @@ export const Elements = {
                 title: "عنوان"
             },
             {
-                name: "description",
-                title: "توضیحات",
-                type: "textarea"
+                name: "url",
+                title: "آدرس"
+            },
+            {
+                name: "parentId",
+                title: "والد",
+                type: "dropdown",
+                dropdown: {
+                    route: "cms/menuitem/list",
+                    value: "id",
+                    text: "title"
+                }
+            },
+            {
+                name: "openInNewTab",
+                title: "تب جدید",
+                type: "boolean"
+            },
+            {
+                name: "firstFooter",
+                title: "در فوتر اول",
+                type: "boolean"
+            },
+            {
+                name: "secendFooter",
+                title: "در فوتر دوم",
+                type: "boolean"
+            },
+            {
+                name: "thirdFooter",
+                title: "در فوتر سوم",
+                type: "boolean"
             },
             {
                 name: "ordering",
@@ -1936,22 +2042,6 @@ export const Elements = {
                 title: "فعال بودن",
                 type: "boolean"
             },
-            {
-                name: "cultureLcid",
-                title: "شناسه زبان",
-                type: "hidden",
-                default: 1065
-            },
-            {
-                name: "customFileId",
-                title: "تصویر مربوطه",
-                type: "image",
-                get: {
-                    field: "customFileGetResponseDto",
-                    value: "id",
-                    url: "url"
-                }
-            }
         ]
     },
     FirstFooter: {
