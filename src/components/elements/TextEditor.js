@@ -31,6 +31,7 @@ const TextEditor = ({field, data}) => {
             />
             ) : (
             <Editor
+                value={data ? data[field.name] : ''}
                 apiKey='tdwc751ztd6i1lm1qc97lp3jqpbdt4ux10ebj4htza2x9g7v'
                 onInit={(evt, editor) => document.querySelector(`input[name="${field.name}"]`).value = editor}
                 onChange={(evt, editor) => {

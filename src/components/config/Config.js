@@ -215,11 +215,11 @@ export const Elements = {
         ],
         form_fields: [
             {
-                name: "title",
+                name: "Title",
                 title: "عنوان"
             },
             {
-                name: "body",
+                name: "Body",
                 title: "توضیحات",
                 type: 'texteditor',
             },
@@ -417,8 +417,8 @@ export const Elements = {
     },
     HealthCenterPdfs: {
         list_route: "cms/healthCenterPdf/active?pageIndex=0&pageSize=100",
-        detail_route: "cms/healthCenter/",
-        create_route: "cms/healthCenter/",
+        detail_route: "cms/healthCenterPdf/",
+        create_route: "cms/healthCenterPdf/",
         list_fields: [
             {
                 name: "title",
@@ -700,8 +700,8 @@ export const Elements = {
             },
         ]
     },
-    insurinsurances: {
-        list_route: "cms/insurance/active?pageIndex=0&pageSize=50",
+    insurances: {
+        list_route: "cms/insurance/active?pageIndex=0&pageSize=100",
         detail_route: "cms/insurance/",
         create_route: "cms/insurance/",
         list_fields: [
@@ -2199,6 +2199,10 @@ export const Elements = {
                     route: "cms/menuitem/list",
                     value: "id",
                     text: "title"
+                },
+                get: {
+                    field: "children",
+                    value: "id",
                 }
             },
             {

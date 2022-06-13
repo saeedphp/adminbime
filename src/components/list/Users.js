@@ -42,8 +42,6 @@ const Users = () => {
         setAccessLevel(e.target.value);
     }
 
-
-
     let handleSubmit = async (event) => {
 
         event.preventDefault();
@@ -68,60 +66,6 @@ const Users = () => {
         })
             .then((response) => response.json())
             .then(console.log);
-
-      /*  let form = document.getElementById('page-form');
-        var formData = new FormData(form);
-        let data = Object.fromEntries(formData.entries());
-        let data_keys = Object.keys(data);
-        let send_data = {};*/
-
-
-       /* console.log(send_data);
-        send_data = JSON.stringify(send_data);
-        const token = cookies.get('token');
-        let fetch_method = "POST";*/
-
-        /*let route = BASE_SIGNUP_URL + "api/auth/signup?api-version=1.0";
-
-        Swal.fire({
-            title: 'آیا مطمئنید که رکورد اضافه شود؟',
-            icon: "warning",
-            showDenyButton: true,
-            showCancelButton: false,
-            confirmButtonText: 'بله',
-            denyButtonText: `خیر`,
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(route, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIn0.wXvIHG3FK6pjeLTzKYQub0iSusGC_Dkkf-HTRRzarWEFltR5G08wcQ.REJZoqfNZy9okWD57-kV2Q.6IMKD5mp0_MfcD-wxtaR2m_xW14lrBdMpPMBTHGYzqLLyJ-_yVsRUjnizl1i1V35V0uQZI27VItl4_eed7ydZPkdQGyAEVsqVUwmMLTsnTmZ-NeKcooSayLCGzUltbIP1KpYwgrQ2D6vReuOR5FDcGdh3KOQfGuHLKL3IwAUg6OTQ4UZxfTBzH3p5Hyedk_nQJUSAUUgkW5sfoUhyyVLJgEi9gL7PnTo4cM7wT_aHqgTeixiCQCPwMyMCS2Bm_yTKKh5eLEGUMNyR1ogWu5NEIICokYc0a1Ip2O-AirlA2TuDwInC-x4wvtRVR6k-xU4lJtdTi27y46mug0rX0ljH99vPpSO3DayEATeTifPukkvTfbZlMTRdsWIf7lgmEeYQ9mIr_5PeYNjWDe_XMQBa20N4f69C6jGumQmRlboc2NJ0jSXLazifFmkm99ADY7WMvuUndPSSyinFfamHEtEhI8DxgxIa8rTVsrpOXJq6D0.jCJKh-IdnzsnQil3eusjuQ'
-                    },
-                    method: fetch_method,
-                    body: JSON.stringify({
-                        name,
-                        family,
-                        mobile,
-                        email,
-                        username,
-                        password,
-                        accessLevel
-                    })
-                }).then(async response => {
-                    const data = await response.json();
-
-                    // setRecord(data.result);
-                    console.log(data);
-                    //window.location.reload();
-                    // window.location.replace('/list/' + model)
-                })
-                    .catch(error => {
-                        // this.setState({ errorMessage: error.toString() });
-                        console.error('There was an error!', error);
-                    });
-            }
-
-        })*/
 
     }
 
