@@ -219,11 +219,6 @@ export const Elements = {
                 title: "عنوان"
             },
             {
-                name: "insertTime",
-                title: "تاریخ",
-                type: "date"
-            },
-            {
                 name: "body",
                 title: "توضیحات",
                 type: 'texteditor',
@@ -236,7 +231,7 @@ export const Elements = {
                     field: "picture",
                     value: "id",
                     url: "url"
-                }
+                },
             },
             {
                 name: "blogTypeId",
@@ -246,6 +241,10 @@ export const Elements = {
                     route: "cms/blogtype/active",
                     value: "id",
                     text: "name"
+                },
+                get: {
+                    field: "blogTypeId",
+                    value: "id",
                 }
             },
             {
@@ -256,6 +255,10 @@ export const Elements = {
                     route: "cms/blogcategory/list/active",
                     value: "id",
                     text: "name"
+                },
+                get: {
+                    field: "blogCategories",
+                    value: "id",
                 }
             },
             {
@@ -697,7 +700,7 @@ export const Elements = {
             },
         ]
     },
-    insurances: {
+    insurinsurances: {
         list_route: "cms/insurance/active?pageIndex=0&pageSize=50",
         detail_route: "cms/insurance/",
         create_route: "cms/insurance/",
@@ -1136,7 +1139,7 @@ export const Elements = {
                 type: "number"
             },
             {
-                name: "customFileId",
+                name: "customeFileId",
                 title: "فایل pdf",
                 type: "pdf",
                 get: {
@@ -1180,8 +1183,18 @@ export const Elements = {
                 title: "عنوان"
             },
             {
+                name: "customFileId",
+                title: "فایل pdf",
+                type: "pdf",
+                get: {
+                    field: "imageGetResponse",
+                    value: "id",
+                    url: "url"
+                }
+            },
+            {
                 name: "revelationId",
-                tilte: "عنوان گزارشگری",
+                title: "عنوان گزارشگری",
                 type: "dropdown",
                 dropdown: {
                     route: "cms/revelation/active?pageIndex=0&pageSize=50",
