@@ -44,7 +44,7 @@ const FileElement = ({field, data}) => {
 
     return (
         <>
-            <a href={data ? BASE_IMAGE_URL + data[field.get.field][field.get.url] : ''}>{data ? data[field.get.field][field.get.url] : ''}</a>
+            {/*<a href={data ? BASE_IMAGE_URL + data[field.get.field][field.get.url] : ''}>{data ? data[field.get.field][field.get.url] : ''}</a>*/}
             <input name={field.name} type="hidden" id={field.name + '-input'}  />
             <div className='input-group'>
                 <input type="file" className="form-control" id={field.name} placeholder={field.title} onChange={handleChange} />
