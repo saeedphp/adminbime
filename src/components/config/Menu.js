@@ -128,12 +128,20 @@ export const Menu = [
         title: "آیتم های پنل پرسنل"
     },
     {
+        name: "PersonalLinks",
+        title: "لینک های پنل پرسنل"
+    },
+    {
         name: "RepresentativePanelCategory",
         title: "پنل نمایندگان"
     },
     {
         name: "RepresentativePanel",
         title: "آیتم های پنل نمایندگان"
+    },
+    {
+        name: "VendorsLinks",
+        title: "لینک های پنل نماینده"
     },
     {
         name: "SocialMedia",

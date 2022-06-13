@@ -1810,6 +1810,89 @@ export const Elements = {
             },
         ]
     },
+    PersonalLinks: {
+        list_route: "cms/usefulLink/list/personnelLink?pageIndex=0&pageSize=20",
+        detail_route: "cms/usefulLink/",
+        create_route: "cms/usefulLink/",
+        list_fields: [
+            {
+                name: "title",
+                title: "نام",
+            },
+            {
+                name: "isPersonnel",
+                title: "پنل پرسنل",
+                type: "boolean",
+            },
+            {
+                name: "isRepresention",
+                title: "پنل نماینده",
+                type: "boolean",
+            },
+            {
+                name: "iconId",
+                title: "آیکون",
+                type: "image",
+                get: {
+                    field: "iconInfo",
+                    value: "id",
+                    url: "url"
+                }
+            }
+        ],
+        form_fields: [
+            {
+                name: "title",
+                title: "عنوان"
+            },
+            {
+                name: "isPersonnel",
+                title: "پرسنل",
+                type: "boolean",
+            },
+            {
+                name: "isRepresention",
+                title: "نماینده",
+                type: "boolean",
+            },
+            {
+                name: "ordering",
+                title: "ترتیب",
+                type: "number",
+            },
+            {
+                name: "isActive",
+                title: "فعال بودن",
+                type: "boolean",
+            },
+            {
+                name: "cultureLcid",
+                title: "شناسه زبان",
+                type: "hidden",
+                default: 1065
+            },
+            {
+                name: "iconId",
+                title: "آیکون",
+                type: "image",
+                get: {
+                    field: "iconInfo",
+                    value: "id",
+                    url: "url"
+                }
+            },
+            {
+                name: "fileId",
+                title: "فایل pdf",
+                type: "pdf",
+                get: {
+                    field: "imageGetResponse",
+                    value: "id",
+                    url: "url"
+                }
+            },
+        ]
+    },
     RepresentativePanelCategory: {
         list_route: "cms/representativePanelCategory/active?pageIndex=0&pageSize=100",
         detail_route: "cms/representativePanelCategory/",
@@ -1911,6 +1994,89 @@ export const Elements = {
             },
             {
                 name: "customFileId",
+                title: "فایل pdf",
+                type: "pdf",
+                get: {
+                    field: "imageGetResponse",
+                    value: "id",
+                    url: "url"
+                }
+            },
+        ]
+    },
+    VendorsLinks: {
+        list_route: "cms/usefulLink/list/representationLink?pageIndex=0&pageSize=12",
+        detail_route: "cms/usefulLink/",
+        create_route: "cms/usefulLink/",
+        list_fields: [
+            {
+                name: "title",
+                title: "نام",
+            },
+            {
+                name: "isPersonnel",
+                title: "پنل پرسنل",
+                type: "boolean",
+            },
+            {
+                name: "isRepresention",
+                title: "پنل نماینده",
+                type: "boolean",
+            },
+            {
+                name: "iconId",
+                title: "آیکون",
+                type: "image",
+                get: {
+                    field: "iconInfo",
+                    value: "id",
+                    url: "url"
+                }
+            }
+        ],
+        form_fields: [
+            {
+                name: "title",
+                title: "عنوان"
+            },
+            {
+                name: "isPersonnel",
+                title: "پرسنل",
+                type: "boolean",
+            },
+            {
+                name: "isRepresention",
+                title: "نماینده",
+                type: "boolean",
+            },
+            {
+                name: "ordering",
+                title: "ترتیب",
+                type: "number",
+            },
+            {
+                name: "isActive",
+                title: "فعال بودن",
+                type: "boolean",
+            },
+            {
+                name: "cultureLcid",
+                title: "شناسه زبان",
+                type: "hidden",
+                default: 1065
+            },
+            {
+                name: "iconId",
+                title: "آیکون",
+                type: "image",
+                get: {
+                    field: "iconInfo",
+                    value: "id",
+                    url: "url"
+                }
+            },
+            {
+                name: "fileId",
                 title: "فایل pdf",
                 type: "pdf",
                 get: {
