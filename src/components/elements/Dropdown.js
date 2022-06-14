@@ -10,15 +10,15 @@ const Dropdown = ({field, data}) => {
                 'cultureLcid': 1065
             }
         })
-        .then(async response => {
-            const data = await response.json();
+            .then(async response => {
+                const data = await response.json();
 
-            setAllRecords(data.result);
-            console.log(data.result);
-        })
-        .catch(error => {
-            console.error('There was an error!', error);
-        });
+                setAllRecords(data.result);
+                console.log(data.result);
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
     }, []);
 
     return (
@@ -27,18 +27,18 @@ const Dropdown = ({field, data}) => {
             {data ?
                 allRecords.map((item, i) => {
 
-                if (item[field.dropdown.value] == data[field.get.field][field.get.value]) {
-                    return (<option key={i} selected value={item[field.dropdown.value]} >{item[field.dropdown.text]}</option>)
-                } else {
-                    return (<option key={i} value={item[field.dropdown.value]} >{item[field.dropdown.text]}</option>)
-                }
+                    if (item[field.dropdown.value] == data[field.get.field][field.get.value]) {
+                        return (<option key={i} selected value={item[field.dropdown.value]} >{item[field.dropdown.text]}</option>)
+                    } else {
+                        return (<option key={i} value={item[field.dropdown.value]} >{item[field.dropdown.text]}</option>)
+                    }
 
-            }) : allRecords.map((item, i) => {
-                return (
-                    <option key={i} value={item[field.dropdown.value]}>
-                        {item[field.dropdown.text]}
-                    </option>
-                )
+                }) : allRecords.map((item, i) => {
+                    return (
+                        <option key={i} value={item[field.dropdown.value]}>
+                            {item[field.dropdown.text]}
+                        </option>
+                    )
                 })}
         </select>
     )

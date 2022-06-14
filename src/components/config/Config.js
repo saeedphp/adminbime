@@ -215,11 +215,11 @@ export const Elements = {
         ],
         form_fields: [
             {
-                name: "Title",
+                name: "title",
                 title: "عنوان"
             },
             {
-                name: "Body",
+                name: "body",
                 title: "توضیحات",
                 type: 'texteditor',
             },
