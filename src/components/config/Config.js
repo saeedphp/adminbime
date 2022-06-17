@@ -2774,7 +2774,7 @@ export const Elements = {
             {
                 name: "value",
                 title: "مقدار"
-            },
+            }
         ],
         form_fields: [
             {
@@ -2790,7 +2790,7 @@ export const Elements = {
                 title: "شناسه زبان",
                 type: "hidden",
                 default: 1065
-            },
+            }
         ]
     }
 }

@@ -178,5 +178,5 @@ export const Menu = [
     {
         name: "setting",
         title: "تنظیمات سایت"
-    },
+    }
 ]
