@@ -2783,7 +2783,7 @@ export const Elements = {
             },
             {
                 name: "value",
-                title: "مقدار"
+                title: "مقدار",
             },
             {
                 name: "cultureLcid",
@@ -2792,5 +2792,5 @@ export const Elements = {
                 default: 1065
             },
         ]
-    },
+    }
 }
