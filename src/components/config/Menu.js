@@ -175,4 +175,8 @@ export const Menu = [
         name: "VendorsUsers",
         title: "کاربران نماینده"
     },
+    {
+        name: "setting",
+        title: "تنظیمات سایت"
+    },
 ]

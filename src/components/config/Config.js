@@ -2762,4 +2762,35 @@ export const Elements = {
             },
         ]
     },
+    setting: {
+        list_route: "cms/setting",
+        detail_route: "cms/setting/",
+        create_route: "cms/setting/",
+        list_fields: [
+            {
+                name: "name",
+                title: "نام"
+            },
+            {
+                name: "value",
+                title: "مقدار"
+            },
+        ],
+        form_fields: [
+            {
+                name: "name",
+                title: "نام"
+            },
+            {
+                name: "value",
+                title: "مقدار"
+            },
+            {
+                name: "cultureLcid",
+                title: "شناسه زبان",
+                type: "hidden",
+                default: 1065
+            },
+        ]
+    },
 }
