@@ -90,7 +90,7 @@ a{
     padding: .5rem 1rem;
     width: 100%;
     text-align: right;
-    font-family: IRANSans;
+    font-family: IRANSans !important;
 }
 
 .user_page form select option{
