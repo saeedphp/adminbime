@@ -42,10 +42,18 @@ function App() {
         window.location.reload();
     })
     .catch(error => {
+        setValidate(!validate);
         // this.setState({ errorMessage: error.toString() });
         console.error('There was an error!', error);
     });
   };
+
+    const [shown, setShown] = useState(false);
+    const [validate, setValidate] = useState(false);
+
+    const togglePassVisibility = () => {
+        setShown(shown ? false : true);
+    };
 
   return (
     <div className="App container-fluid">
@@ -71,7 +79,11 @@ function App() {
                 <img src={logo} alt="logo" />
             </span>
           <form onSubmit={submitHandler}>
-
+              {validate ? (
+                  <p className="login_error">
+                      نام کاربری یا رمز عبور اشتباه می باشد!
+                  </p>
+              ) : null}
             <div>
               <label htmlFor="username">
                   نام کاربری
@@ -83,7 +95,10 @@ function App() {
               <label htmlFor="password">
                   رمز عبور
               </label>
-              <input id="password" name="password" type='password' className="form-control" onChange={e => setPassword(e.target.value)}/>
+                <div className="pass_wrapper">
+                    <i onClick={togglePassVisibility} className="fa fa-eye"></i>
+                    <input id="password" name="password" type={shown ? 'text' : 'password'} className="form-control" onChange={e => setPassword(e.target.value)}/>
+                </div>
             </div>
 
             <div>

@@ -91,7 +91,7 @@ const Form = () => {
                 fetch(route, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIn0.KW6MzZ_A97AuA0LS7uoKJWGIhGXlpNtZt0gEzTAekTZqmURAYKdd3g.rJ_VqqRFqt-cEdGbg-FrCA.oOA7D99RTbsiSCd6ZSZXHLTWbd75NLBIcMmwED6TS6M70uZkamCuHKIZy5W9gzIrMzzu95MmNQh2-sowZsbSZzjOFNcwiC-B_6rUIJ11esKxeeDC53Cq8RdAc0JgnwIcj3i64Z7nSG3zw1famdOvKjDVjYk-s6qR8LRRKmrxLvew116VP4P0KRLxS32iZ6jf2f8aRWTHqcNlf7KboNRnm6UKYfRpY3OCNPYhb69qJlBYES_5AsWTmgP6o2E8wRVIzLDiqi28dwWJMSOj68b3SD3B3z0zD1NQz7aCacEFVO4kCkVQ6hEDVk9JiEgLTySxXzmb5gr2-MlG28EsGk3kzQEGkSVT7gBn2pdvJ44CraBH4ILPNXWzyslw2hhiuYXMOaD2Q9Rl1dtLxfvsKDt4_eCZuWW2BMY5LhLbdK3uys3V4_n4-KL0_4TDAU_INbYMDK56G2OPxKODq4ZvVEWeKuQy8o5KgTBfiwsqrDbAkak.4LuAROEfc7LUfoADAxHVZg'
+                        'Authorization': 'Bearer eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIn0.ZbbBOWa0qAXAGkCAy6IhdPAe8a7ksykBSMJAWRt0oPxVLTyJNx04lA.Qb26tcLJFtrBL2ELtt38iQ.Vqiq7pT7_PyfQONwXjuSmUsf_lUKChfNXpFtZPfdAIbiXbxM56B5_wLAOJ77CI1ryyshe2J6CI-H5cV5-hx2GYjf6tb4S18HJA8_EMd3aTsHczvJ5cbNmKDVFx9S2YK7wnGOjeL-on65qvIgzEj--MuBg-N-UdCW3UP1W4XXM34DYST2FYphoaF5PaGveHOVaFT5oRBoI6ona6EXiEBRK42U7ERtRNQfA8ACIbYhH5FCRqsghLJmUIbz6VXkEDFQ1Ef0vJZxxbJ7QjY0G1k7c--fR5W44csQtNeaOOK9cSHHPfZtdlkRci54MNGEPtKJQ-KPmYccbu2Mk0P_lu0COquSOVJjrdNB6wMSk71sM8ZEAc_X35LZDCuR6WvOyqWhbKW-biL9TzfRGQQT_jL7N4WC1lk-q-g86yq40TrCNgHkOZoYJByIuKjnFFlC_SfbKc9_DV-UTexu2g2Ny4GsOQ1v8yCWh-ex8zH_le6mXOk.2S7HTDscwwmWn8ln9NFOZA'
                     },
                     method: fetch_method,
                     body: send_data
@@ -101,7 +101,7 @@ const Form = () => {
                     // setRecord(data.result);
                     console.log(data);
                     //window.location.reload();
-                    window.location.replace('/list/' + model)
+                    //window.location.replace('/list/' + model)
                 })
                     .catch(error => {
                         // this.setState({ errorMessage: error.toString() });

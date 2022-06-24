@@ -1,6 +1,7 @@
 import React from 'react'
 import { Editor } from '@tinymce/tinymce-react';
 const TextEditor = ({field, data}) => {
+
     return (
         <>
             <input type="hidden" id={field.name} name={field.name} />

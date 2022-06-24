@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import {BASE_IMAGE_URL, BASE_SIGNUP_URL, BASE_URL, Elements} from '../config/Config'
-import Cookies from 'universal-cookie'
+import React, {useState } from 'react'
+import { BASE_SIGNUP_URL} from '../config/Config'
+
 
 const Users = () => {
-
-    const cookies = new Cookies();
-    const token = cookies.get('token');
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -14,6 +11,9 @@ const Users = () => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [accessLevel, setAccessLevel] = useState('');
+
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
 
     const nameChangeHandler = (e) => {
         setFirstName(e.target.value);
@@ -46,32 +46,46 @@ const Users = () => {
 
         event.preventDefault();
         console.log(firstName);
-
+        setError(null);
+        setSuccess(null);
         fetch(BASE_SIGNUP_URL + "api/auth/signup?api-version=1.0", {
             method: "POST",
             headers: {
                 'accept': '*/*',
-                'Authorization': 'Bearer eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIn0.HPtfpOMB0aP-uaLTEgZJXUYQCFNl_agQFQ5sMP8QaSbvcy4ui_Xbiw.3JmW5tpmpOMAPLLia-b01g.0eA-h7tP8aOtL0o1PvChtWkmKVZpkjgNSpcYIyyk2JHjp6OtLy6MSiqVGI6pASy1nZAhWoQQ7rSosaNEh0WEz4q2DfUw3bxehO7qlan4HW5wNSH-h6-GEXri2L6UMR3fvZavfKxMFtNzTFs4KEQqJCXvAJAW5ovye1IOJE20YniHUreEq6uXyFVMIoKLw9XSlRyGtbCIyL7TjUDdLEL-VA4L8llHojPwXEhS6uKNHTZ_KdmuDxV7Qg-UtjqUdCBrCjeBPsuERa_fy33mCIgNbuy-98-2BjVh26-7CpCCrUWIglJS2OFShfsiOcMdwVG6Pz4bCXfqTDE7LihtmNUlh0nVlu3q1pGHAvTbLOcrZzey0WC2ZPVpdddHZkSzlEbacUh6waS-Ww7nhOSkr9rLoRTy5rV8hQHDfbp8RG2woyq_LxgoIguYKmLkhaADsGVFurXYOJv0MERR2M21yu7W7GZzEE0vwLNi9JI8MkNx4Ls.j3wLNh1Io6Z01t4YMn-VvQ',
+                'Authorization': 'Bearer eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIn0.ZbbBOWa0qAXAGkCAy6IhdPAe8a7ksykBSMJAWRt0oPxVLTyJNx04lA.Qb26tcLJFtrBL2ELtt38iQ.Vqiq7pT7_PyfQONwXjuSmUsf_lUKChfNXpFtZPfdAIbiXbxM56B5_wLAOJ77CI1ryyshe2J6CI-H5cV5-hx2GYjf6tb4S18HJA8_EMd3aTsHczvJ5cbNmKDVFx9S2YK7wnGOjeL-on65qvIgzEj--MuBg-N-UdCW3UP1W4XXM34DYST2FYphoaF5PaGveHOVaFT5oRBoI6ona6EXiEBRK42U7ERtRNQfA8ACIbYhH5FCRqsghLJmUIbz6VXkEDFQ1Ef0vJZxxbJ7QjY0G1k7c--fR5W44csQtNeaOOK9cSHHPfZtdlkRci54MNGEPtKJQ-KPmYccbu2Mk0P_lu0COquSOVJjrdNB6wMSk71sM8ZEAc_X35LZDCuR6WvOyqWhbKW-biL9TzfRGQQT_jL7N4WC1lk-q-g86yq40TrCNgHkOZoYJByIuKjnFFlC_SfbKc9_DV-UTexu2g2Ny4GsOQ1v8yCWh-ex8zH_le6mXOk.2S7HTDscwwmWn8ln9NFOZA',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 firstName,
                 lastName,
                 phoneNumber,
-                email,
-                password,
                 userName,
+                password,
+                email,
                 accessLevel
             }),
         })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('عملیات مورد نظر اجرا نشد!');
+                } else if (response.ok) {
+                    throw new Error('کاربر با موفقیت افزوده شد')
+                }
+                setSuccess(success.message);
+                return response.json();
+            })
             .then((response) => response.json())
-            .then(console.log);
+            .then(console.log).catch((error) => {
+            setError(error.message)
+        });
 
     }
 
     return (
         <div className="user_page">
             <form id='page-form' onSubmit={handleSubmit} method="POST">
+                {error && <p className="login_error">{error}</p>}
+                {success && <p className="login_success">{success}</p>}
                 <div>
                     <label htmlFor="firstName">
                         نام

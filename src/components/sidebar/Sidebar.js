@@ -2,7 +2,6 @@ import React from 'react'
 import {Menu} from '../config/Menu'
 import logo from '../../assets/images/logo.webp'
 import Cookies from "universal-cookie";
-import { Redirect } from 'react-router-dom';
 
 const Sidebar = () => {
 

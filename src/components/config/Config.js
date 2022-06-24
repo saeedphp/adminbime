@@ -16,6 +16,14 @@ export const Elements = {
                 name: "description",
                 title: "توضیحات",
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -47,6 +55,14 @@ export const Elements = {
                 title: "نام استان",
                 type: "object",
                 object_field: "name"
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             }
         ],
         form_fields: [
@@ -95,7 +111,15 @@ export const Elements = {
                 title: "نام شهر",
                 type: "object",
                 object_field: "name"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -155,7 +179,15 @@ export const Elements = {
             {
                 name: "name",
                 title: "عنوان"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -211,6 +243,14 @@ export const Elements = {
                     value: "id",
                     url: "url"
                 }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -286,7 +326,15 @@ export const Elements = {
             {
                 name: "name",
                 title: "عنوان نوع بلاگ"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -353,7 +401,7 @@ export const Elements = {
         ]
     },
     healthCenters: {
-        list_route: "cms/healthCenter/active?pageIndex=0&pageSize=50",
+        list_route: "cms/healthCenter/active?pageIndex=0&pageSize=100",
         detail_route: "cms/healthCenter/",
         create_route: "cms/healthCenter/",
         list_fields: [
@@ -368,7 +416,15 @@ export const Elements = {
             {
                 name: "phoneNumber",
                 title: "شماره تماس"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -429,6 +485,14 @@ export const Elements = {
                 title: "نام استان",
                 type: "object",
                 object_field: "name"
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -491,6 +555,14 @@ export const Elements = {
                 name: "description",
                 title: "توضیحات"
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -532,6 +604,14 @@ export const Elements = {
             {
                 name: "description",
                 title: "توضیحات"
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -575,6 +655,14 @@ export const Elements = {
                 name: "description",
                 title: "توضیحات"
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -616,7 +704,11 @@ export const Elements = {
             {
                 name: "description",
                 title: "توضیحات"
-            }
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -664,6 +756,14 @@ export const Elements = {
             {
                 name: "title",
                 title: "عنوان"
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -723,7 +823,15 @@ export const Elements = {
                     url: "url",
                     object_field: 'url'
                 }
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -791,7 +899,15 @@ export const Elements = {
             {
                 name: "description",
                 title: "توضیحات"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -847,7 +963,15 @@ export const Elements = {
             {
                 name: "category",
                 title: "دسته بندی"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -898,6 +1022,14 @@ export const Elements = {
                     value: "id",
                     url: "url"
                 }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -964,7 +1096,15 @@ export const Elements = {
             {
                 name: "phoneNumber",
                 title: "شماره تماس"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1049,7 +1189,15 @@ export const Elements = {
             {
                 name: "phoneNumber",
                 title: "شماره تماس"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1127,6 +1275,14 @@ export const Elements = {
                 name: "title",
                 title: "عنوان"
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1175,7 +1331,15 @@ export const Elements = {
                 title: "عنوان گزارشگری",
                 type: "object",
                 object_field: "title"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1246,6 +1410,14 @@ export const Elements = {
                     value: "id",
                     url: "url"
                 }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -1405,6 +1577,14 @@ export const Elements = {
                     url: "url"
                 }
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1513,7 +1693,15 @@ export const Elements = {
             {
                 name: "gender",
                 title: "جنسیت"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1626,7 +1814,15 @@ export const Elements = {
             {
                 name: "description",
                 title: "توضیحات"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1674,7 +1870,15 @@ export const Elements = {
             {
                 name: "title",
                 title: "عنوان"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1707,6 +1911,14 @@ export const Elements = {
             {
                 name: "title",
                 title: "نام",
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -1757,7 +1969,15 @@ export const Elements = {
                 title: "فایل",
                 type: "object",
                 object_field: "url"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1838,7 +2058,15 @@ export const Elements = {
                     value: "id",
                     url: "url"
                 }
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1902,6 +2130,14 @@ export const Elements = {
                 name: "title",
                 title: "نام",
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1951,7 +2187,15 @@ export const Elements = {
                 title: "فایل",
                 type: "object",
                 object_field: "url"
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -1983,7 +2227,7 @@ export const Elements = {
                 title: "دسته",
                 type: "dropdown",
                 dropdown: {
-                    route: "cms/representativePanelCategory/active?pageIndex=0&pageSize=10",
+                    route: "cms/representativePanel/active?pageSize=100",
                     value: "id",
                     text: "title"
                 },
@@ -2032,7 +2276,15 @@ export const Elements = {
                     value: "id",
                     url: "url"
                 }
-            }
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -2110,6 +2362,14 @@ export const Elements = {
                     url: "url"
                 }
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -2180,6 +2440,14 @@ export const Elements = {
             {
                 name: "thirdFooter",
                 title: "فوتر سوم"
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -2279,6 +2547,14 @@ export const Elements = {
                 title: "فوتر سوم",
                 type: "boolean",
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
@@ -2297,6 +2573,10 @@ export const Elements = {
                     route: "cms/menuitem/list/FirstFooterList",
                     value: "id",
                     text: "title"
+                },
+                get: {
+                    field: "parentId",
+                    value: "id",
                 }
             },
             {
@@ -2372,6 +2652,14 @@ export const Elements = {
                 name: "thirdFooter",
                 title: "فوتر سوم",
                 type: "boolean",
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -2466,6 +2754,14 @@ export const Elements = {
                 name: "thirdFooter",
                 title: "فوتر سوم",
                 type: "boolean",
+            },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
             },
         ],
         form_fields: [
@@ -2707,63 +3003,33 @@ export const Elements = {
         ],
         form_fields: [
             {
-                name: "title",
-                title: "عنوان"
+                name: "firstName",
+                title: "نام"
             },
             {
-                name: "url",
-                title: "آدرس"
+                name: "lastName",
+                title: "نام خانوادگی"
             },
             {
-                name: "parentId",
-                title: "والد",
-                type: "dropdown",
-                dropdown: {
-                    route: "cms/menuitem/list/SecendFooterList",
-                    value: "id",
-                    text: "title"
-                }
+                name: "phoneNumber",
+                title: "شماره همراه"
             },
             {
-                name: "openInNewTab",
-                title: "تب جدید",
-                type: "boolean"
+                name: "email",
+                title: "ایمیل"
             },
             {
-                name: "firstFooter",
-                title: "در فوتر اول",
-                type: "boolean"
+                name: "userName",
+                title: "نام کاربری",
             },
             {
-                name: "secendFooter",
-                title: "در فوتر دوم",
-                type: "boolean"
-            },
-            {
-                name: "thirdFooter",
-                title: "در فوتر سوم",
-                type: "boolean"
-            },
-            {
-                name: "ordering",
-                title: "ترتیب",
-                type: "number"
-            },
-            {
-                name: "isActive",
-                title: "فعال بودن",
-                type: "boolean"
-            },
-            {
-                name: "cultureLcid",
-                title: "شناسه زبان",
-                type: "hidden",
-                default: 1065
+                name: "accessLevel",
+                title: "نوع کاربر",
             },
         ]
     },
     setting: {
-        list_route: "cms/setting",
+        list_route: "cms/setting/",
         detail_route: "cms/setting/",
         create_route: "cms/setting/",
         list_fields: [
@@ -2774,7 +3040,11 @@ export const Elements = {
             {
                 name: "value",
                 title: "مقدار"
-            }
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {

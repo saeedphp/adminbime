@@ -29,6 +29,8 @@ const Element = ({field, data}) => {
             return (<Checkbox field={field} data={data} />)
         case 'hidden':
             return (<Hidden field={field} data={data} />)
+        case 'btn' :
+        case 'removeBtn' :
         default:
             return (<Input field={field} data={data} />)
     }

@@ -23,10 +23,10 @@ export const Menu = [
         name: "blogTypes",
         title: "نوع خبر و رویدادها"
     },
-    {
+    /*{
         name: "faqs",
         title: "سوالات متداول"
-    },
+    },*/
     {
         name: "healthCenters",
         title: "مراکز درمانی"

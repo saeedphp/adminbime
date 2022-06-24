@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BASE_IMAGE_URL, BASE_URL } from '../config/Config'
 import $ from "jquery";
+import Cookies from "universal-cookie";
 
 const FileElement = ({field, data}) => {
+
+    const cookies = new Cookies();
+    const token = cookies.get('token');
 
     const [showLoading, setShowLoading] = useState(false);
     const [showOk, setShowOk] = useState(false);
@@ -20,7 +24,7 @@ const FileElement = ({field, data}) => {
         fetch(BASE_URL + 'cms/customfile/image', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIn0.i99IsG-GVm3pRRFK309v8z7WXv6ICx2z5tbTqekteGIV3w0Nx0OvJw.3usYb7EAisYq312eZm65Tg.gvhf70d5N8wGGLufnb2Ngc1nLPsTyDL8wB1FIE1QsQBJof0G6dQ7_gBvyZzAJ61d88Kf5zZ7XRt6VRDXtPZyW_gqxzSK-vaexjCvO15lC5uHBiO5uRZjepWZSXfnt1BZ8UbdjDYHxjaohnEIJ9y-SgqOK4UBa6_VxOsDp8pzJ_eE8mpWfmtZi45iccPv8ZAVCUIBLcewFH6BZMGnqkGSik4iiG43P4UgCxmnNh5C0AoJX8IxGeLsX6jWSF9ymyTBy3ul1IR6SIEpNPMAA3NIOGObaEyoNwHN2N_UKcQL3cl7ecKemH_Au6oevD2DNxQ0TQfayJ6r3ek_8lLDLEUaKFijzAn7A9T56C6rDjYJGsjt4dP3v0LyoTfVk_LhIa6n3Lxg7wQ3ZXbtHcVB0G1uh_6F5Wb3tax51BDZm5-jGDFGyeTTiB06bq-Zu6mmCYvQpAVgZVzwa4IYmoPA7tsWZkvhE6VC1reOu2mB5zCs8jY.CWb2xGEMbktrxh8TEK-FMA'
+                'Authorization': 'Bearer eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIn0.ZbbBOWa0qAXAGkCAy6IhdPAe8a7ksykBSMJAWRt0oPxVLTyJNx04lA.Qb26tcLJFtrBL2ELtt38iQ.Vqiq7pT7_PyfQONwXjuSmUsf_lUKChfNXpFtZPfdAIbiXbxM56B5_wLAOJ77CI1ryyshe2J6CI-H5cV5-hx2GYjf6tb4S18HJA8_EMd3aTsHczvJ5cbNmKDVFx9S2YK7wnGOjeL-on65qvIgzEj--MuBg-N-UdCW3UP1W4XXM34DYST2FYphoaF5PaGveHOVaFT5oRBoI6ona6EXiEBRK42U7ERtRNQfA8ACIbYhH5FCRqsghLJmUIbz6VXkEDFQ1Ef0vJZxxbJ7QjY0G1k7c--fR5W44csQtNeaOOK9cSHHPfZtdlkRci54MNGEPtKJQ-KPmYccbu2Mk0P_lu0COquSOVJjrdNB6wMSk71sM8ZEAc_X35LZDCuR6WvOyqWhbKW-biL9TzfRGQQT_jL7N4WC1lk-q-g86yq40TrCNgHkOZoYJByIuKjnFFlC_SfbKc9_DV-UTexu2g2Ny4GsOQ1v8yCWh-ex8zH_le6mXOk.2S7HTDscwwmWn8ln9NFOZA'
             },
             body: data
         })

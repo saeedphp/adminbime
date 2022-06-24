@@ -105,3 +105,32 @@ a{
     width: 100%;
     margin: 0;
 }
+
+.pass_wrapper{
+    position: relative;
+}
+
+.pass_wrapper i{
+    position: absolute;
+    left: .5rem;
+    top: 25%;
+    cursor: pointer;
+}
+
+.login_error{
+    text-align: center;
+    color: red;
+    border: 1px solid;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+}
+
+.login_success{
+    text-align: center;
+    color: green;
+    border: 1px solid;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+}
