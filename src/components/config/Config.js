@@ -2227,12 +2227,12 @@ export const Elements = {
                 title: "دسته",
                 type: "dropdown",
                 dropdown: {
-                    route: "cms/representativePanel/active?pageSize=100",
+                    route: "cms/representativePanel/active?pageIndex=0&pageSize=100",
                     value: "id",
                     text: "title"
                 },
                 get: {
-                    field: "personnelPanelCategoryGetResponse",
+                    field: "representativePanelCategoryGetResponse",
                     value: "id",
                 }
             },
