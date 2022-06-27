@@ -32,18 +32,20 @@ const Sidebar = () => {
                 ) : null}
                 <Accordion defaultActiveKey="0">
                     {Menu.map((item, i) => (
-                        <Accordion.Item eventKey={i}>
-                            <Accordion.Header className="menu_link">
-                                <i className={item.icon} />
-                                مدیریت
-                                {" " + item.title}
-                            </Accordion.Header>
-                            <Accordion.Body>
-                                <a href={`/list/${item.name}`} className="nav-link align-middle px-0 text-black">
-                                    <span className="ms-1 d-none d-sm-inline">{item.title}</span>
-                                </a>
-                            </Accordion.Body>
-                        </Accordion.Item>
+                        <div key={i}>
+                            <Accordion.Item eventKey={i}>
+                                <Accordion.Header className="menu_link">
+                                    <i className={item.icon} />
+                                    مدیریت
+                                    {" " + item.title}
+                                </Accordion.Header>
+                                <Accordion.Body>
+                                    <a href={`/list/${item.name}`} className="nav-link align-middle px-0 text-black">
+                                        <span className="ms-1 d-none d-sm-inline">{item.title}</span>
+                                    </a>
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </div>
                     ))}
                 </Accordion>
 

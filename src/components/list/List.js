@@ -59,7 +59,7 @@ const List = () => {
 
                         // setRecord(data.result);
                         console.log(data);
-                        //window.location.reload();
+                        window.location.reload();
                     })
                     .catch(error => {
                         // this.setState({ errorMessage: error.toString() });
