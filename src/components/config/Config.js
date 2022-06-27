@@ -2227,7 +2227,7 @@ export const Elements = {
                 title: "دسته",
                 type: "dropdown",
                 dropdown: {
-                    route: "cms/representativePanel/active?pageIndex=0&pageSize=100",
+                    route: "cms/representativePanel/active?pageIndex=0&pageSize=100npm ru",
                     value: "id",
                     text: "title"
                 },

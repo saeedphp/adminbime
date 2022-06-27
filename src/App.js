@@ -58,10 +58,10 @@ function App() {
   return (
     <div className="App container-fluid">
       {token ? (
-      <div className="row flex-nowrap">
+      <div className="row flex-nowrap position-relative">
         <Sidebar />
 
-        <div className="col py-3">
+        <div className="col py-3 position-absolute w-75 content">
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />

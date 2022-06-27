@@ -3,6 +3,7 @@ import {Link, useParams} from 'react-router-dom'
 import {BASE_IMAGE_URL, BASE_URL, Elements} from '../config/Config'
 import Cookies from 'universal-cookie'
 import Swal from 'sweetalert2'
+import {Spinner} from "react-bootstrap";
 
 const List = () => {
     const cookies = new Cookies();
@@ -22,20 +23,10 @@ const List = () => {
         })
             .then(async response => {
                 const data = await response.json();
-
-                // // check for error response
-                // if (!response.result) {
-                //     // get error message from body or default to response statusText
-                //     const error = (data && data.message) || response.statusText;
-                //     return Promise.reject(error);
-                // }
-
                 setIsLoading(false);
                 setAllRecords(data.result);
-                // this.setState({ totalReactPackages: data.total })
             })
             .catch(error => {
-                // this.setState({ errorMessage: error.toString() });
                 console.error('There was an error!', error);
                 setIsLoading(false);
             });
@@ -147,7 +138,11 @@ const List = () => {
                         })}
                     </tr>
                 ))}
-                {isLoading && <p>Loading...</p>}
+                {isLoading &&
+                    <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                }
                 </tbody>
             </table>
         </div>
