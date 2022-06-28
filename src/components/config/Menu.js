@@ -63,11 +63,11 @@ export const Menu = [
         title: "قوانین اخذ نمایندگی",
         icon: 'fa fa-money-bill',
     },
-    {
+    /*{
         name: "images",
         title: "تصاویر",
         icon: 'fa fa-image',
-    },
+    },*/
     {
         name: "Regulation",
         title: "شرایط عضویت",
@@ -129,7 +129,7 @@ export const Menu = [
         icon: 'fa fa-phone-alt',
     },
     {
-        name: "users",
+        name: "users_bime",
         title: "پرسنل بیمه آرمان",
         icon: 'fa fa-user',
     },

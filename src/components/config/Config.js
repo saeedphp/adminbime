@@ -1542,7 +1542,7 @@ export const Elements = {
             }
         ],
     },
-    users: {
+    users_bime: {
         list_route: "cms/user/active?pageIndex=0&pageSize=100",
         detail_route: "cms/user/",
         create_route: "cms/user/",
@@ -2460,6 +2460,20 @@ export const Elements = {
                 title: "آدرس"
             },
             {
+                name: "stateId",
+                title: "استان",
+                type: "dropdown",
+                dropdown: {
+                    route: "basicdata/state/active",
+                    value: "id",
+                    text: "name"
+                },
+                get: {
+                    field: "stateGetResponseDto",
+                    value: "id",
+                }
+            },
+            {
                 name: "parentId",
                 title: "والد",
                 type: "dropdown",
@@ -2469,7 +2483,7 @@ export const Elements = {
                     text: "title"
                 },
                 get: {
-                    field: "children",
+                    field: "parentId",
                     value: "id",
                 }
             },
