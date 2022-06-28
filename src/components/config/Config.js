@@ -510,7 +510,7 @@ export const Elements = {
                     text: "name"
                 },
                 get: {
-                    field: "stateInfo",
+                    field: "stateGetResponseDto",
                     value: "id",
                 }
             },
@@ -2408,7 +2408,7 @@ export const Elements = {
         ]
     },
     MenuItems: {
-        list_route: "cms/menuitem/list/MenuItemList",
+        list_route: "cms/menuitem/list/active",
         detail_route: "cms/menuitem/",
         create_route: "cms/menuitem/",
         list_fields: [
@@ -2470,6 +2470,20 @@ export const Elements = {
                 },
                 get: {
                     field: "children",
+                    value: "id",
+                }
+            },
+            {
+                name: "stateId",
+                title: "استان",
+                type: "dropdown",
+                dropdown: {
+                    route: "basicdata/state/active",
+                    value: "id",
+                    text: "name"
+                },
+                get: {
+                    field: "stateInfo",
                     value: "id",
                 }
             },

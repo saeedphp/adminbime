@@ -18,7 +18,7 @@ const FileElement = ({field, data}) => {
         setShowOk(false);
         setShowLoading(true);
 
-        var data = new FormData()
+        data = new FormData()
         data.append('FormFile', input.files[0])
 
         fetch(BASE_URL + 'cms/customfile/image', {

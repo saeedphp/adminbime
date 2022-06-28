@@ -101,7 +101,7 @@ const Form = () => {
                     // setRecord(data.result);
                     console.log(data);
                     //window.location.reload();
-                    window.location.replace('/list/' + model)
+                    //window.location.replace('/list/' + model)
                 })
                     .catch(error => {
                         // this.setState({ errorMessage: error.toString() });
