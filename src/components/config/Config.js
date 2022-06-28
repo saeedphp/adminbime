@@ -2474,20 +2474,6 @@ export const Elements = {
                 }
             },
             {
-                name: "stateId",
-                title: "استان",
-                type: "dropdown",
-                dropdown: {
-                    route: "basicdata/state/active",
-                    value: "id",
-                    text: "name"
-                },
-                get: {
-                    field: "stateInfo",
-                    value: "id",
-                }
-            },
-            {
                 name: "openInNewTab",
                 title: "تب جدید",
                 type: "boolean"
