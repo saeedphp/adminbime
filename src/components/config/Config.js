@@ -2227,7 +2227,7 @@ export const Elements = {
                 title: "دسته",
                 type: "dropdown",
                 dropdown: {
-                    route: "cms/representativePanel/active?pageIndex=0&pageSize=100npm ru",
+                    route: "cms/representativePanel/active?pageIndex=0&pageSize=100",
                     value: "id",
                     text: "title"
                 },
@@ -2408,7 +2408,7 @@ export const Elements = {
         ]
     },
     MenuItems: {
-        list_route: "cms/menuitem/list/active",
+        list_route: "cms/menuitem/list/MenuItemList",
         detail_route: "cms/menuitem/",
         create_route: "cms/menuitem/",
         list_fields: [
@@ -2428,7 +2428,7 @@ export const Elements = {
                 name: "parentId",
                 title: "والد"
             },
-            {
+            /*{
                 name: "firstFooter",
                 title: "فوتر اول",
                 type: "boolean",
@@ -2440,7 +2440,7 @@ export const Elements = {
             {
                 name: "thirdFooter",
                 title: "فوتر سوم"
-            },
+            },*/
             {
                 title: 'ویرایش',
                 type: 'btn',
@@ -2460,57 +2460,43 @@ export const Elements = {
                 title: "آدرس"
             },
             {
-                name: "stateId",
-                title: "استان",
-                type: "dropdown",
-                dropdown: {
-                    route: "basicdata/state/active",
-                    value: "id",
-                    text: "name"
-                },
-                get: {
-                    field: "stateGetResponseDto",
-                    value: "id",
-                }
-            },
-            {
                 name: "parentId",
                 title: "والد",
                 type: "dropdown",
                 dropdown: {
-                    route: "cms/menuitem/list",
+                    route: "cms/menuitem/list/MenuItemList",
                     value: "id",
                     text: "title"
                 },
                 get: {
-                    field: "parentId",
+                    field: "title",
                     value: "id",
                 }
             },
             {
                 name: "openInNewTab",
                 title: "تب جدید",
-                type: "boolean"
+                type: "boolean",
             },
             {
                 name: "firstFooter",
                 title: "در فوتر اول",
-                type: "boolean"
+                type: "boolean",
             },
             {
                 name: "secendFooter",
                 title: "در فوتر دوم",
-                type: "boolean"
+                type: "boolean",
             },
             {
                 name: "thirdFooter",
                 title: "در فوتر سوم",
-                type: "boolean"
+                type: "boolean",
             },
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "number",
             },
             {
                 name: "isActive",
@@ -2589,7 +2575,7 @@ export const Elements = {
                     text: "title"
                 },
                 get: {
-                    field: "parentId",
+                    field: "title",
                     value: "id",
                 }
             },
@@ -2693,6 +2679,10 @@ export const Elements = {
                     route: "cms/menuitem/list/SecendFooterList",
                     value: "id",
                     text: "title"
+                },
+                get: {
+                    field: "title",
+                    value: "id",
                 }
             },
             {
@@ -2795,6 +2785,10 @@ export const Elements = {
                     route: "cms/menuitem/list/ThirdFooterList",
                     value: "id",
                     text: "title"
+                },
+                get: {
+                    field: "title",
+                    value: "id",
                 }
             },
             {

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Editor } from '@tinymce/tinymce-react';
-const TextEditor = ({field, data}) => {
+const TextEditor = ({field, data, e}) => {
 
     let textEditorId = document.getElementById('textEditor');
     //textEditorId.setAttribute('value', data[field.name])
 
     return (
         <>
-            <input type="hidden" id={field.name} name={field.name} />
+            <input type="hidden" defaultValue={data ? data[field.name] : ''} id={field.name} name={field.name} />
             {/* <!--textarea className="form-control" id={field.name} name={field.name} rows={3} defaultValue={data ? data[field.name] : ''} /> */}
             {data ? (
             <Editor
@@ -38,9 +38,9 @@ const TextEditor = ({field, data}) => {
                 id="textEditor"
                 initialValue={data ? data[field.name] : ''}
                 apiKey='tdwc751ztd6i1lm1qc97lp3jqpbdt4ux10ebj4htza2x9g7v'
-                onInit={(evt, editor) => document.querySelector(`input[name="${field.name}"]`).value = editor}
+                //onInit={(evt, editor) => document.querySelector(`input[name="${field.name}"]`).value = editor}
                 onChange={(evt, editor) => {
-                    document.querySelector(`input[name="${field.name}"]`).value = editor.getContent()
+                    //document.querySelector(`input[name="${field.name}"]`).value = editor.getContent()
                 }}
                 init={{
                 height: 500,

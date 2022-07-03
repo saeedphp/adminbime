@@ -20,7 +20,6 @@ const Form = () => {
             })
                 .then(async response => {
                     const data = await response.json();
-
                     // // check for error response
                     // if (!response.result) {
                     //     // get error message from body or default to response statusText

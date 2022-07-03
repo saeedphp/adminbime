@@ -133,11 +133,11 @@ export const Menu = [
         title: "پرسنل بیمه آرمان",
         icon: 'fa fa-user',
     },
-    {
+    /*{
         name: "vendorings",
         title: "فروشنده ها",
         icon: 'fa fa-user-check',
-    },
+    },*/
     {
         name: "visions",
         title: "چشم اندازها",
@@ -148,11 +148,11 @@ export const Menu = [
         title: "ویژگی های چشم انداز",
         icon: 'fa fa-eye',
     },
-    {
+    /*{
         name: "PersonnelPanelCategory",
         title: "پنل پرسنل",
         icon: 'fa fa-user',
-    },
+    },*/
     {
         name: "PersonnelPanel",
         title: "آیتم های پنل پرسنل",
