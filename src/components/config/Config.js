@@ -898,7 +898,8 @@ export const Elements = {
             },
             {
                 name: "description",
-                title: "توضیحات"
+                title: "توضیحات",
+                type: 'texteditor'
             },
             {
                 title: 'ویرایش',
