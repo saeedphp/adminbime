@@ -3002,10 +3002,6 @@ export const Elements = {
                 title: 'حذف',
                 type: 'removeBtn',
             },
-            {
-                title: 'add new',
-                type: 'addNew',
-            },
         ],
         form_fields: [
             {
