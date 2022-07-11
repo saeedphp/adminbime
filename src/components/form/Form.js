@@ -15,7 +15,9 @@ const Form = () => {
         if (id) {
             fetch(BASE_URL + Elements[model]['detail_route'] + id, {
                 headers: {
-                    'Authorization': `Bearer ${token}`
+                    'accept': '*/*',
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
                 }
             })
                 .then(async response => {

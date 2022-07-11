@@ -1,6 +1,7 @@
 export const BASE_URL = 'https://bimeharman.faradns.ir/api/v1.0/';
 export const BASE_IMAGE_URL = 'https://bimeharman.faradns.ir/';
 export const BASE_SIGNUP_URL = 'https://bimeharman.faradns.ir/';
+export const BASE_ADD_USER_URL = 'http://localhost:3000/'
 
 export const Elements = {
     states: {
@@ -2830,7 +2831,7 @@ export const Elements = {
             },
         ]
     },
-    signupsignup: {
+    users: {
         list_route: "cms/menuitem/list/FirstFooterList",
         detail_route: "cms/menuitem/",
         create_route: "cms/menuitem/",
@@ -2922,61 +2923,45 @@ export const Elements = {
                 name: "accessLevel",
                 title: "نوع کاربر",
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
         ],
         form_fields: [
             {
-                name: "title",
-                title: "عنوان"
+                name: "firstName",
+                title: "نام"
             },
             {
-                name: "url",
-                title: "آدرس"
+                name: "lastName",
+                title: "نام خانوادگی"
             },
             {
-                name: "parentId",
-                title: "والد",
-                type: "dropdown",
-                dropdown: {
-                    route: "cms/menuitem/list/SecendFooterList",
-                    value: "id",
-                    text: "title"
-                }
+                name: "phoneNumber",
+                title: "شماره همراه"
             },
             {
-                name: "openInNewTab",
-                title: "تب جدید",
-                type: "boolean"
+                name: "email",
+                title: "ایمیل"
             },
             {
-                name: "firstFooter",
-                title: "در فوتر اول",
-                type: "boolean"
+                name: "userName",
+                title: "نام کاربری",
             },
             {
-                name: "secendFooter",
-                title: "در فوتر دوم",
-                type: "boolean"
+                name: "password",
+                title: "رمز عبور",
+                type: 'hidden',
             },
             {
-                name: "thirdFooter",
-                title: "در فوتر سوم",
-                type: "boolean"
-            },
-            {
-                name: "ordering",
-                title: "ترتیب",
-                type: "number"
-            },
-            {
-                name: "isActive",
-                title: "فعال بودن",
-                type: "boolean"
-            },
-            {
-                name: "cultureLcid",
-                title: "شناسه زبان",
-                type: "hidden",
-                default: 1065
+                name: "accessLevel",
+                title: "سطح دسترسی",
+                type: 'levelDropdown',
             },
         ]
     },
@@ -3009,6 +2994,18 @@ export const Elements = {
                 name: "accessLevel",
                 title: "نوع کاربر",
             },
+            {
+                title: 'ویرایش',
+                type: 'btn',
+            },
+            {
+                title: 'حذف',
+                type: 'removeBtn',
+            },
+            {
+                title: 'add new',
+                type: 'addNew',
+            },
         ],
         form_fields: [
             {
@@ -3032,10 +3029,16 @@ export const Elements = {
                 title: "نام کاربری",
             },
             {
-                name: "accessLevel",
-                title: "نوع کاربر",
+                name: "password",
+                title: "رمز عبور",
+                type: 'hidden',
             },
-        ]
+            {
+                name: "accessLevel",
+                title: "سطح دسترسی",
+                type: 'levelDropdown',
+            },
+        ],
     },
     setting: {
         list_route: "cms/setting/",
