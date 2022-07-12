@@ -1,7 +1,7 @@
 export const BASE_URL = 'https://bimeharman.faradns.ir/api/v1.0/';
 export const BASE_IMAGE_URL = 'https://bimeharman.faradns.ir/';
 export const BASE_SIGNUP_URL = 'https://bimeharman.faradns.ir/';
-export const BASE_ADD_USER_URL = 'http://localhost:3000/'
+export const BASE_ADD_USER_URL = 'https://bimepanel.vercel.app/'
 
 export const Elements = {
     states: {

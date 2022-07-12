@@ -71,22 +71,35 @@ const List = () => {
     }
 
     const currPath = window.location.href;
+    //const curr = window.location.pathname;
+    //console.log('curr is: ' + curr);
 
     return (
         <div>
-            {currPath === 'http://localhost:3000/list/PersonalUsers' && 'http://localhost:3000/list/VendorsUsers' ? (
-                <Link to={`/list/users`}>
-                    <button className="btn btn-info mb-4">
-                        افزودن
-                    </button>
-                </Link>
-            ) : (
+
+
+            {currPath !== BASE_ADD_USER_URL + 'list/PersonalUsers' && currPath !== BASE_ADD_USER_URL + 'list/VendorsUsers' && (
                 <Link to={`/create/${model}`}>
                     <button className="btn btn-info mb-4">
                         افزودن مورد جدید
                     </button>
                 </Link>
-            )}
+            ) }
+            {currPath === BASE_ADD_USER_URL + 'list/PersonalUsers' && (
+                <Link to={`/list/users`}>
+                    <button className="btn btn-info mb-4">
+                        افزودن
+                    </button>
+                </Link>
+            ) }
+            {currPath ===  BASE_ADD_USER_URL + 'list/VendorsUsers' && (
+                <Link to={`/list/users`}>
+                    <button className="btn btn-info mb-4">
+                        افزودن
+                    </button>
+                </Link>
+            ) }
+
             {/*<Link to={`/create/${model}`}>
                 <button className="btn btn-info mb-4">
                     افزودن مورد جدید
