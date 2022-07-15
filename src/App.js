@@ -8,6 +8,8 @@ import { useState } from "react";
 import logo from './assets/images/logo.webp';
 import { BASE_URL } from "./components/config/Config";
 import Users from "./components/list/Users";
+import Menu from "./components/list/menu";
+import MenuChildren from "./components/list/[menuId]";
 
 function App() {
   const cookies = new Cookies();
@@ -67,6 +69,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/list/:model" element={<List />} />
               <Route path="/list/users" element={<Users />} />
+              <Route path="/list/menu" element={<Menu />} />
+              <Route path="/list/menu/:id" element={<MenuChildren />} />
               <Route path="/form/:model/:id" element={<Form />} />
                 <Route path="/create/:model/" element={<Form />} />
             </Routes>

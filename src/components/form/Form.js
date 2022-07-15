@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import { BASE_URL, Elements } from '../config/Config';
 import Element from "../Element";
 import Cookies from 'universal-cookie';
 import Swal from 'sweetalert2'
+import PageTitle from "../PageTitle";
 
 const Form = () => {
     const cookies = new Cookies();
@@ -115,30 +116,48 @@ const Form = () => {
     }
 
     return (
-        <div>
-            <form id='page-form' onSubmit={handleSubmit} method="POST">
-            {Elements[model]['form_fields'].map((item, i) => {
-                if (item.type == 'hidden') {
-                    return (<Element field={item} data={record} />)
-                } else {
-                    return (
-                        <div className="mb-3 row" key={i}>
-                            <label htmlFor="staticEmail" className="col-sm-2 col-form-label">{item.title}</label>
-                            <div className="col-sm-10"> 
-                                <Element field={item} data={record} />
-                            </div>
+        <PageTitle title={Elements[model]['metaTitle']}>
+            <div>
+                <ul className="d-flex align-items-center justify-content-start text-right mb-5">
+                    <li>
+                        <Link to="/">
+                            <i className="fa fa-home ml-1"></i>
+                            خانه
+                        </Link>
+                    </li>
+                    <span className="mr-1 ml-1">
+                            /
+                        </span>
+                    <li>
+                        <a>
+                            {Elements[model]['metaTitle']}
+                        </a>
+                    </li>
+                </ul>
+                <form id='page-form' onSubmit={handleSubmit} method="POST">
+                    {Elements[model]['form_fields'].map((item, i) => {
+                        if (item.type == 'hidden') {
+                            return (<Element field={item} data={record} />)
+                        } else {
+                            return (
+                                <div className="mb-3 row" key={i}>
+                                    <label htmlFor="staticEmail" className="col-sm-2 col-form-label">{item.title}</label>
+                                    <div className="col-sm-10">
+                                        <Element field={item} data={record} />
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
+                    <div className="mb-3 row">
+                        <label htmlFor="staticEmail" className="col-sm-2 col-form-label"></label>
+                        <div className="col-sm-10">
+                            <button type='submit' defaultValue='ثبت' className='btn btn-primary px-5' >ثبت</button>
                         </div>
-                    )
-                }
-            })}
-            <div className="mb-3 row">
-                <label htmlFor="staticEmail" className="col-sm-2 col-form-label"></label>
-                <div className="col-sm-10"> 
-                    <button type='submit' defaultValue='ثبت' className='btn btn-primary px-5' >ثبت</button>
-                </div>
+                    </div>
+                </form>
             </div>
-            </form>
-        </div>
+        </PageTitle>
     )
 }
 

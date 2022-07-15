@@ -46,19 +46,43 @@ const FileElement = ({field, data}) => {
         });
     }
 
+    function validateFileType(){
+        var fileName = document.querySelector(".inputFile").value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+            //TO DO
+        }else{
+            alert("Only jpg/jpeg and png files are allowed!");
+            fileName.target.value='';
+            return;
+        }
+    }
+
+
+    function inputChange() {
+        handleChange();
+        validateFileType();
+    }
+
+    //defaultValue={data ? data[field.get.field][field.get.url] : ''}
+
     return (
         <>
-            {/*<a href={data ? BASE_IMAGE_URL + data[field.get.field][field.get.url] : ''}>{data ? data[field.get.field][field.get.url] : ''}</a>*/}
-            <input name={field.name} type="hidden" id={field.name + '-input'}  />
+            <a href={data ? BASE_IMAGE_URL + data[field.get.field][field.get.url] : ''}>{data ? data[field.get.field][field.get.url] : ''}</a>
+            <input name={field.name} type="hidden"  id={field.name + '-input'}  />
             <div className='input-group'>
-                <input type="file" className="form-control" id={field.name} placeholder={field.title} onChange={handleChange} />
-                <span className="input-group-text" style={{display: showLoading || showOk ? "inline" : "none"}}>
+                <input accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp" type="file" className="form-control inputFile" id={field.name} placeholder={field.title} onChange={inputChange} />
+                <span className={`input-group-text ${showLoading ? 'sending' : 'sent'}`} style={{display: showLoading || showOk ? "inline" : "none"}}>
                     <div style={{ display: showLoading ? "inline" : "none" }}>
                         در حال ارسال
                     </div>
                     <span style={{display: showOk ? "inline" : "none"}}>ارسال شد</span>
                 </span>
             </div>
+            <span style={{display: showOk ? "none" : "inline"}}>
+                        تا زمانی که فایل ارسال نشده است، دکمه ثبت را نزنید!
+                    </span>
         </>
     )
 }

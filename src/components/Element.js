@@ -9,6 +9,7 @@ import TextEditor from './elements/TextEditor';
 import Hidden from './elements/Hidden';
 import Multiple from "./elements/Multiple";
 import LevelDropdown from "./elements/LevelDropdown";
+import CheckboxHidden from "./elements/CheckboxHidden";
 
 const Element = ({field, data}) => {
     switch (field.type) {
@@ -30,6 +31,8 @@ const Element = ({field, data}) => {
             return (<FileElement field={field} data={data} />)
         case 'boolean':
             return (<Checkbox field={field} data={data} />)
+        case 'booleanhidden':
+            return (<CheckboxHidden field={field} data={data} />)
         case 'hidden':
             return (<Hidden field={field} data={data} />)
         case 'btn' :

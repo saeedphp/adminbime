@@ -199,3 +199,50 @@ a{
     color: #6c3580 !important;
     margin-left: .5rem;
 }
+
+.search_bar{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+
+.search_bar input{
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.search_bar input::placeholder{
+    font-family: IRANSans;
+}
+
+.search_bar input:focus{
+    border: none;
+}
+
+span.sent{
+    background: #0f0;
+    color: #fff;
+}
+
+span.sending{
+    background: #f00;
+    color: #fff;
+}
+
+.weak_pass{
+    text-align: right;
+    color: #f00;
+    margin-top: 1rem;
+}
+
+.strong_pass{
+    text-align: right;
+    color: #158315;
+    margin-top: 1rem;
+}

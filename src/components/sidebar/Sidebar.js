@@ -3,6 +3,7 @@ import {Menu} from '../config/Menu'
 import logo from '../../assets/images/logo.webp'
 import Cookies from "universal-cookie";
 import {Accordion} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const Sidebar = () => {
 
@@ -40,9 +41,15 @@ const Sidebar = () => {
                                     {" " + item.title}
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                    <a href={`/list/${item.name}`} className="nav-link align-middle px-0 text-black">
-                                        <span className="ms-1 d-none d-sm-inline">{item.title}</span>
-                                    </a>
+                                    {item.children && <ul>
+                                        {item.children.map((child, i) => {
+                                            return (
+                                                <a className="nav-link align-middle px-0 text-black" href={`/list/${child.name}`}>
+                                                    {child.title}
+                                                </a>
+                                            )
+                                        })}
+                                    </ul>}
                                 </Accordion.Body>
                             </Accordion.Item>
                         </div>

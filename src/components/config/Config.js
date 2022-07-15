@@ -5,6 +5,7 @@ export const BASE_ADD_USER_URL = 'https://bimepanel.vercel.app/'
 
 export const Elements = {
     states: {
+        metaTitle: 'استان ها',
         list_route: "basicdata/state/active",
         detail_route: "basicdata/state/",
         create_route: "basicdata/state/",
@@ -39,6 +40,7 @@ export const Elements = {
         ]
     },
     cities: {
+        metaTitle: 'شهرها',
         list_route: "basicdata/city/active",
         detail_route: "basicdata/city/",
         create_route: "basicdata/city/",
@@ -93,6 +95,7 @@ export const Elements = {
         ]
     },
     addresses: {
+        metaTitle: 'آدرس ها',
         list_route: "cms/address/active?pageIndex=0&pageSize=50",
         detail_route: "cms/address/",
         create_route: "cms/address/",
@@ -173,6 +176,7 @@ export const Elements = {
         ]
     },
     blogCategories: {
+        metaTitle: 'دسته بندی اخبار',
         list_route: "cms/blogcategory/list/active",
         detail_route: "cms/blogcategory/",
         create_route: "cms/blogcategory/",
@@ -198,6 +202,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
+                type: "hidden",
+                default: 0
             },
             {
                 name: "isActive",
@@ -213,6 +219,7 @@ export const Elements = {
         ]
     },
     BlogPosts: {
+        metaTitle: 'اخبار و مقالات',
         list_route: "cms/blogpost/active",
         detail_route: "cms/blogpost/",
         create_route: "cms/blogpost/",
@@ -320,6 +327,7 @@ export const Elements = {
         ]
     },
     blogTypes: {
+        metaTitle: 'نوع خبر',
         list_route: "cms/blogtype/active",
         detail_route: "cms/blogtype/",
         create_route: "cms/blogtype/",
@@ -402,6 +410,7 @@ export const Elements = {
         ]
     },
     healthCenters: {
+        metaTitle: 'مراکز درمانی',
         list_route: "cms/healthCenter/active?pageIndex=0&pageSize=100",
         detail_route: "cms/healthCenter/",
         create_route: "cms/healthCenter/",
@@ -417,6 +426,16 @@ export const Elements = {
             {
                 name: "phoneNumber",
                 title: "شماره تماس"
+            },
+            {
+                name: "exactAddress",
+                title: "آدرس",
+            },
+            {
+                name: "cityGetResponseDto",
+                title: "نام شهر",
+                type: "object",
+                object_field: "name"
             },
             {
                 title: 'ویرایش',
@@ -441,23 +460,28 @@ export const Elements = {
                 title: "شماره تماس"
             },
             {
-                name: "addressId",
-                title: "آدرس مربوطه",
+                name: "exactAddress",
+                title: "آدرس",
+            },
+            {
+                name: "cityId",
+                title: "شهر مربوطه",
                 type: "dropdown",
                 dropdown: {
-                    route: "cms/address/active?pageIndex=0&pageSize=50",
+                    route: "basicdata/city/active",
                     value: "id",
-                    text: "exactAddress"
+                    text: "name"
                 },
                 get: {
-                    field: "addressGetResponseDto",
+                    field: "cityGetResponseDto",
                     value: "id",
                 }
             },
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0
             },
             {
                 name: "isActive",
@@ -473,14 +497,11 @@ export const Elements = {
         ]
     },
     HealthCenterPdfs: {
+        metaTitle: 'pdf مراکز درمانی',
         list_route: "cms/healthCenterPdf/active?pageIndex=0&pageSize=100",
         detail_route: "cms/healthCenterPdf/",
         create_route: "cms/healthCenterPdf/",
         list_fields: [
-            {
-                name: "title",
-                title: "عنوان فایل"
-            },
             {
                 name: "stateGetResponseDto",
                 title: "نام استان",
@@ -499,7 +520,9 @@ export const Elements = {
         form_fields: [
             {
                 name: "title",
-                title: "عنوان فایل"
+                title: "عنوان فایل",
+                type: "hidden",
+                default: "state name",
             },
             {
                 name: "stateId",
@@ -528,12 +551,13 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
                 title: "فعال بودن",
-                type: "boolean"
+                type: "boolean",
             },
             {
                 name: "cultureLcid",
@@ -544,6 +568,7 @@ export const Elements = {
         ]
     },
     GeneralRule: {
+        metaTitle: 'قوانین عمومی',
         list_route: "cms/generalRule/active?pageIndex=0&pageSize=20",
         detail_route: "cms/generalRule/",
         create_route: "cms/generalRule/",
@@ -578,7 +603,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -594,6 +620,7 @@ export const Elements = {
         ]
     },
     GeneralCondition: {
+        metaTitle: 'شرایط عمومی',
         list_route: "cms/generalCondition/active?pageIndex=0&pageSize=100",
         detail_route: "cms/generalCondition/",
         create_route: "cms/generalCondition/",
@@ -628,7 +655,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -644,6 +672,7 @@ export const Elements = {
         ]
     },
     RepresentationConditions: {
+        metaTitle: 'عنوان های شغلی',
         list_route: "cms/representationCondition/active?pageIndex=0&pageSize=100",
         detail_route: "cms/representationCondition/",
         create_route: "cms/representationCondition/",
@@ -678,7 +707,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -750,6 +780,7 @@ export const Elements = {
         ]
     },
     Regulation: {
+        metaTitle: 'عنوان های شغلی',
         list_route: "cms/regulation/active?pageIndex=0&pageSize=50",
         detail_route: "cms/regulation/",
         create_route: "cms/regulation/",
@@ -785,8 +816,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
-                default: 1
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -802,6 +833,7 @@ export const Elements = {
         ]
     },
     insurances: {
+        metaTitle: 'محصولات',
         list_route: "cms/insurance/active?pageIndex=0&pageSize=100",
         detail_route: "cms/insurance/",
         create_route: "cms/insurance/",
@@ -846,8 +878,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
-                default: 1
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -883,6 +915,7 @@ export const Elements = {
         ]
     },
     insuranceInfos: {
+        metaTitle: 'جزئیات محصولات',
         list_route: "cms/insuranceInfo/active?pageIndex=0&pageSize=50",
         detail_route: "cms/insuranceInfo/",
         create_route: "cms/insuranceInfo/",
@@ -938,7 +971,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -954,6 +988,7 @@ export const Elements = {
         ]
     },
     jobPositions: {
+        metaTitle: 'عنوان های شغلی',
         list_route: "cms/jobPosition/active?pageIndex=0&pageSize=50",
         detail_route: "cms/jobPosition/",
         create_route: "cms/jobPosition/",
@@ -987,7 +1022,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1003,6 +1039,7 @@ export const Elements = {
         ]
     },
     pdfs: {
+        metaTitle: 'بروشور',
         list_route: "cms/pdf/active?pageIndex=0&pageSize=50",
         detail_route: "cms/pdf/",
         create_route: "cms/pdf/",
@@ -1012,15 +1049,11 @@ export const Elements = {
                 title: "عنوان"
             },
             {
-                name: "description",
-                title: "توضیحات"
-            },
-            {
                 name: "pictureId",
                 title: "تصویر",
                 type: "image",
                 get: {
-                    field: "customFileGetResponseDto",
+                    field: "imageGetResponse",
                     value: "id",
                     url: "url"
                 }
@@ -1042,12 +1075,14 @@ export const Elements = {
             {
                 name: "description",
                 title: "توضیحات",
-                type: "textarea"
+                type: "hidden",
+                default: "desc"
             },
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1083,6 +1118,7 @@ export const Elements = {
         ]
     },
     Representationes: {
+        metaTitle: 'شعب بیمه آرمان',
         list_route: "cms/representation/active?pageIndex=0&pageSize=50",
         detail_route: "cms/representation/",
         create_route: "cms/representation/",
@@ -1160,7 +1196,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1176,6 +1213,7 @@ export const Elements = {
         ]
     },
     DamageCenters: {
+        metaTitle: 'شعب دریافت خسارت',
         list_route: "cms/damageCenter/active?pageIndex=0&pageSize=100",
         detail_route: "cms/damageCenter/",
         create_route: "cms/damageCenter/",
@@ -1253,7 +1291,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1269,6 +1308,7 @@ export const Elements = {
         ]
     },
     revelations: {
+        metaTitle: 'گزارش گیری',
         list_route: "cms/revelation/active?pageIndex=0&pageSize=50",
         detail_route: "cms/revelation/",
         create_route: "cms/revelation/",
@@ -1294,7 +1334,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "customeFileId",
@@ -1320,6 +1361,7 @@ export const Elements = {
         ]
     },
     revelationAttributes: {
+        metaTitle: 'ویژگی گزارش گری',
         list_route: "cms/revelationAttribute/active?pageIndex=0&pageSize=100",
         detail_route: "cms/revelationAttribute/",
         create_route: "cms/revelationAttribute/",
@@ -1375,7 +1417,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1391,6 +1434,7 @@ export const Elements = {
         ]
     },
     sliderItems: {
+        metaTitle: 'بنر',
         list_route: "cms/sliderItem/active?pageIndex=0&pageSize=100",
         detail_route: "cms/sliderItem/",
         create_route: "cms/sliderItem/",
@@ -1435,7 +1479,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1466,6 +1511,7 @@ export const Elements = {
         ]
     },
     suggestions: {
+        metaTitle: 'فرم پیشنهادات',
         list_route: "cms/suggustion/active?pageIndex=0&pageSize=100",
         detail_route: "cms/suggustion/",
         create_route: "cms/suggustion/",
@@ -1526,6 +1572,7 @@ export const Elements = {
         ]
     },
     ContactUs: {
+        metaTitle: 'فرم تماس با ما',
         list_route: "cms/contactUs/list/active?pageIndex=0&pageSize=100",
         detail_route: "cms/contactUs/",
         create_route: "cms/contactUs/",
@@ -1545,6 +1592,7 @@ export const Elements = {
         ],
     },
     users_bime: {
+        metaTitle: 'پرسنل بیمه آرمان',
         list_route: "cms/user/active?pageIndex=0&pageSize=100",
         detail_route: "cms/user/",
         create_route: "cms/user/",
@@ -1599,12 +1647,15 @@ export const Elements = {
             },
             {
                 name: "userName",
-                title: "نام کاربری"
+                title: "نام کاربری",
+                type: "hidden",
+                default: "username",
             },
             {
                 name: "password",
                 title: "رمز عبور",
-                type: "text"
+                type: "hidden",
+                default: "password123@"
             },
             {
                 name: "email",
@@ -1614,7 +1665,6 @@ export const Elements = {
             {
                 name: "mobileNumber",
                 title: "شماره همراه",
-                type: "textarea"
             },
             {
                 name: "position",
@@ -1623,20 +1673,26 @@ export const Elements = {
             {
                 name: "gender",
                 title: "جنسیت",
+                type: "hidden",
+                default: 'gender'
             },
             {
                 name: "age",
                 title: "سن",
-                type: "number",
+                type: "hidden",
+                default: 20
             },
             {
                 name: "nationalCode",
                 title: "کد ملی",
+                type: "hidden",
+                default: "1234567890"
             },
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1805,6 +1861,7 @@ export const Elements = {
         ]
     },
     visions: {
+        metaTitle: 'چشم انداز',
         list_route: "cms/vision/active?pageIndex=0&pageSize=100",
         detail_route: "cms/vision/",
         create_route: "cms/vision/",
@@ -1839,7 +1896,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1865,6 +1923,7 @@ export const Elements = {
         ]
     },
     visionAttributes: {
+        metaTitle: 'ویژگی های چشم انداز',
         list_route: "cms/visionAttribute/active?pageIndex=0&pageSize=100",
         detail_route: "cms/visionAttribute/",
         create_route: "cms/visionAttribute/",
@@ -1890,7 +1949,9 @@ export const Elements = {
             },
             {
                 name: "ordering",
-                title: "ترتیب"
+                title: "ترتیب",
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1906,6 +1967,7 @@ export const Elements = {
         ]
     },
     PersonnelPanelCategory: {
+        metaTitle: 'دسته بندی پنل پرسنل',
         list_route: "cms/personnelPanelCategory/active?pageIndex=0&pageSize=100",
         detail_route: "cms/personnelPanelCategory/",
         create_route: "cms/personnelPanelCategory/",
@@ -1931,8 +1993,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
-                default: 1,
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -1948,6 +2010,7 @@ export const Elements = {
         ]
     },
     PersonnelPanel: {
+        metaTitle: 'آیتم های دانلودی پنل پرسنل',
         list_route: "cms/personnelPanel/active?pageIndex=0&pageSize=10",
         detail_route: "cms/personnelPanel/",
         create_route: "cms/personnelPanel/",
@@ -2033,6 +2096,7 @@ export const Elements = {
         ]
     },
     PersonalLinks: {
+        metaTitle: 'لینک های مفید پرسنل',
         list_route: "cms/usefulLink/list/personnelLink?pageIndex=0&pageSize=20",
         detail_route: "cms/usefulLink/",
         create_route: "cms/usefulLink/",
@@ -2042,13 +2106,12 @@ export const Elements = {
                 title: "نام",
             },
             {
-                name: "isPersonnel",
-                title: "پنل پرسنل",
-                type: "boolean",
+                name: "url",
+                title: "لینک"
             },
             {
-                name: "isRepresention",
-                title: "پنل نماینده",
+                name: "isPersonnel",
+                title: "پنل پرسنل",
                 type: "boolean",
             },
             {
@@ -2076,19 +2139,19 @@ export const Elements = {
                 title: "عنوان"
             },
             {
+                name: "url",
+                title: "لینک"
+            },
+            {
                 name: "isPersonnel",
                 title: "پرسنل",
                 type: "boolean",
             },
             {
-                name: "isRepresention",
-                title: "نماینده",
-                type: "boolean",
-            },
-            {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -2114,16 +2177,13 @@ export const Elements = {
             {
                 name: "fileId",
                 title: "فایل pdf",
-                type: "pdf",
-                get: {
-                    field: "imageGetResponse",
-                    value: "id",
-                    url: "url"
-                }
+                type: "hidden",
+                default: 400,
             },
         ]
     },
     RepresentativePanelCategory: {
+        metaTitle: 'دسته بندی پنل نمایندگان',
         list_route: "cms/representativePanelCategory/active?pageIndex=0&pageSize=100",
         detail_route: "cms/representativePanelCategory/",
         create_route: "cms/representativePanelCategory/",
@@ -2149,8 +2209,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
-                default: 1,
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -2166,6 +2226,7 @@ export const Elements = {
         ]
     },
     RepresentativePanel: {
+        metaTitle: 'آیتم های دانلودی نماینده',
         list_route: "cms/representativePanel/active?pageIndex=0&pageSize=100",
         detail_route: "cms/representativePanel/",
         create_route: "cms/representativePanel/",
@@ -2211,7 +2272,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -2251,6 +2313,7 @@ export const Elements = {
         ]
     },
     VendorsLinks: {
+        metaTitle: 'لینک های مفید نماینده',
         list_route: "cms/usefulLink/list/representationLink?pageIndex=0&pageSize=12",
         detail_route: "cms/usefulLink/",
         create_route: "cms/usefulLink/",
@@ -2260,9 +2323,8 @@ export const Elements = {
                 title: "نام",
             },
             {
-                name: "isPersonnel",
-                title: "پنل پرسنل",
-                type: "boolean",
+                name: "url",
+                title: "لینک"
             },
             {
                 name: "isRepresention",
@@ -2294,9 +2356,8 @@ export const Elements = {
                 title: "عنوان"
             },
             {
-                name: "isPersonnel",
-                title: "پرسنل",
-                type: "boolean",
+                name: "url",
+                title: "لینک"
             },
             {
                 name: "isRepresention",
@@ -2306,7 +2367,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
+                type: "hidden",
+                default: 0
             },
             {
                 name: "isActive",
@@ -2332,16 +2394,13 @@ export const Elements = {
             {
                 name: "fileId",
                 title: "فایل pdf",
-                type: "pdf",
-                get: {
-                    field: "imageGetResponse",
-                    value: "id",
-                    url: "url"
-                }
+                type: "hidden",
+                default: 400,
             },
         ]
     },
     SocialMedia: {
+        metaTitle: 'شبکه های اجتماعی',
         list_route: "cms/socialMedia/active?pageIndex=0&pageSize=20",
         detail_route: "cms/socialMedia/",
         create_route: "cms/socialMedia/",
@@ -2384,7 +2443,9 @@ export const Elements = {
             },
             {
                 name: "ordering",
-                title: "ترتیب"
+                title: "ترتیب",
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -2410,7 +2471,8 @@ export const Elements = {
         ]
     },
     MenuItems: {
-        list_route: "cms/menuitem/list/MenuItemList",
+        metaTitle: 'منو',
+        list_route: "cms/menuitem/list/active",
         detail_route: "cms/menuitem/",
         create_route: "cms/menuitem/",
         list_fields: [
@@ -2466,7 +2528,7 @@ export const Elements = {
                 title: "والد",
                 type: "dropdown",
                 dropdown: {
-                    route: "cms/menuitem/list/MenuItemList",
+                    route: "cms/menuitem/list",
                     value: "id",
                     text: "title"
                 },
@@ -2476,29 +2538,10 @@ export const Elements = {
                 }
             },
             {
-                name: "openInNewTab",
-                title: "تب جدید",
-                type: "boolean",
-            },
-            {
-                name: "firstFooter",
-                title: "در فوتر اول",
-                type: "boolean",
-            },
-            {
-                name: "secendFooter",
-                title: "در فوتر دوم",
-                type: "boolean",
-            },
-            {
-                name: "thirdFooter",
-                title: "در فوتر سوم",
-                type: "boolean",
-            },
-            {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
+                type: "hidden",
+                default: 0
             },
             {
                 name: "isActive",
@@ -2514,6 +2557,7 @@ export const Elements = {
         ]
     },
     FirstFooter: {
+        metaTitle: 'فوتر ستون اول',
         list_route: "cms/menuitem/list/FirstFooterList",
         detail_route: "cms/menuitem/",
         create_route: "cms/menuitem/",
@@ -2533,21 +2577,6 @@ export const Elements = {
             {
                 name: "parentId",
                 title: "والد"
-            },
-            {
-                name: "firstFooter",
-                title: "فوتر اول",
-                type: "boolean",
-            },
-            {
-                name: "secendFooter",
-                title: "فوتر دوم",
-                type: "boolean",
-            },
-            {
-                name: "thirdFooter",
-                title: "فوتر سوم",
-                type: "boolean",
             },
             {
                 title: 'ویرایش',
@@ -2582,29 +2611,15 @@ export const Elements = {
                 }
             },
             {
-                name: "openInNewTab",
-                title: "تب جدید",
-                type: "boolean"
-            },
-            {
                 name: "firstFooter",
                 title: "در فوتر اول",
                 type: "boolean"
             },
             {
-                name: "secendFooter",
-                title: "در فوتر دوم",
-                type: "boolean"
-            },
-            {
-                name: "thirdFooter",
-                title: "در فوتر سوم",
-                type: "boolean"
-            },
-            {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -2620,6 +2635,7 @@ export const Elements = {
         ]
     },
     SecondFooter: {
+        metaTitle: 'فوتر ستون دوم',
         list_route: "cms/menuitem/list/SecendFooterList",
         detail_route: "cms/menuitem/",
         create_route: "cms/menuitem/",
@@ -2639,21 +2655,6 @@ export const Elements = {
             {
                 name: "parentId",
                 title: "والد"
-            },
-            {
-                name: "firstFooter",
-                title: "فوتر اول",
-                type: "boolean",
-            },
-            {
-                name: "secendFooter",
-                title: "فوتر دوم",
-                type: "boolean",
-            },
-            {
-                name: "thirdFooter",
-                title: "فوتر سوم",
-                type: "boolean",
             },
             {
                 title: 'ویرایش',
@@ -2688,29 +2689,15 @@ export const Elements = {
                 }
             },
             {
-                name: "openInNewTab",
-                title: "تب جدید",
-                type: "boolean"
-            },
-            {
-                name: "firstFooter",
-                title: "در فوتر اول",
-                type: "boolean"
-            },
-            {
                 name: "secendFooter",
                 title: "در فوتر دوم",
                 type: "boolean"
             },
             {
-                name: "thirdFooter",
-                title: "در فوتر سوم",
-                type: "boolean"
-            },
-            {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -2726,6 +2713,7 @@ export const Elements = {
         ]
     },
     ThirdFooter: {
+        metaTitle: 'فوتر ستون سوم',
         list_route: "cms/menuitem/list/ThirdFooterList",
         detail_route: "cms/menuitem/",
         create_route: "cms/menuitem/",
@@ -2745,21 +2733,6 @@ export const Elements = {
             {
                 name: "parentId",
                 title: "والد"
-            },
-            {
-                name: "firstFooter",
-                title: "فوتر اول",
-                type: "boolean",
-            },
-            {
-                name: "secendFooter",
-                title: "فوتر دوم",
-                type: "boolean",
-            },
-            {
-                name: "thirdFooter",
-                title: "فوتر سوم",
-                type: "boolean",
             },
             {
                 title: 'ویرایش',
@@ -2794,21 +2767,6 @@ export const Elements = {
                 }
             },
             {
-                name: "openInNewTab",
-                title: "تب جدید",
-                type: "boolean"
-            },
-            {
-                name: "firstFooter",
-                title: "در فوتر اول",
-                type: "boolean"
-            },
-            {
-                name: "secendFooter",
-                title: "در فوتر دوم",
-                type: "boolean"
-            },
-            {
                 name: "thirdFooter",
                 title: "در فوتر سوم",
                 type: "boolean"
@@ -2816,7 +2774,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -2832,6 +2791,7 @@ export const Elements = {
         ]
     },
     users: {
+        metaTitle: 'کاربران',
         list_route: "cms/menuitem/list/FirstFooterList",
         detail_route: "cms/menuitem/",
         create_route: "cms/menuitem/",
@@ -2879,7 +2839,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number"
+                type: "hidden",
+                default: 0
             },
             {
                 name: "isActive",
@@ -2895,6 +2856,7 @@ export const Elements = {
         ]
     },
     PersonalUsers: {
+        metaTitle: 'کاربران پرسنل',
         list_route: "cms/PersonnelAndRepresentation/list/personnel?pageIndex=0&pageSize=100",
         detail_route: "cms/PersonnelAndRepresentation/",
         create_route: "cms/PersonnelAndRepresentation/",
@@ -2966,6 +2928,7 @@ export const Elements = {
         ]
     },
     VendorsUsers: {
+        metaTitle: 'کاربران نماینده',
         list_route: "cms/PersonnelAndRepresentation/Representation?pageIndex=0&pageSize=100",
         detail_route: "cms/PersonnelAndRepresentation/",
         create_route: "cms/PersonnelAndRepresentation/",
@@ -3037,6 +3000,7 @@ export const Elements = {
         ],
     },
     setting: {
+        metaTitle: 'تنطیمات',
         list_route: "cms/setting/",
         detail_route: "cms/setting/",
         create_route: "cms/setting/",

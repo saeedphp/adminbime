@@ -1,5 +1,5 @@
 export const Menu = [
-    {
+/*    {
         name: "states",
         title: "استان ها",
         icon: 'fa fa-home',
@@ -15,212 +15,293 @@ export const Menu = [
         icon: 'fa fa-address-book',
     },
     {
-        name: "blogCategories",
-        title: "دسته بندی خبر و رویدادها",
-        icon: 'fa fa-list',
-    },
-    {
-        name: "BlogPosts",
-        title: "مقالات",
-        icon: 'fa fa-newspaper',
-    },
-    {
         name: "blogTypes",
         title: "نوع خبر و رویدادها",
         icon: 'fa fa-newspaper',
+    },*/
+    {
+        title: "اخبار و بلاگ",
+        icon: 'fa fa-list',
+        children: [
+            {
+                name: "blogCategories",
+                title: "دسته بندی ها",
+                icon: 'fa fa-list',
+            },
+            {
+                name: "BlogPosts",
+                title: "مقالات",
+                icon: 'fa fa-newspaper',
+            }
+        ]
     },
+
     /*{
         name: "faqs",
         title: "سوالات متداول"
     },*/
     {
-        name: "healthCenters",
-        title: "مراکز درمانی",
+        title: "شعب و مراکز درمانی",
         icon: 'fa fa-hospital',
+        children: [
+            {
+                name: "HealthCenterPdfs",
+                title: "pdf مراکز درمانی",
+                icon: 'fa fa-file-pdf',
+            },
+            {
+                name: "healthCenters",
+                title: "مراکز درمانی",
+                icon: 'fa fa-hospital',
+            },
+            {
+                name: "Representationes",
+                title: "شعب",
+                icon: 'fa fa-code-branch',
+            },
+            {
+                name: "DamageCenters",
+                title: "شعب دریافت خسارت",
+                icon: 'fa fa-code-branch',
+            },
+        ]
     },
     {
-        name: "HealthCenterPdfs",
-        title: "pdf مراکز درمانی",
-        icon: 'fa fa-file-pdf',
-    },
-    {
-        name: "Representationes",
-        title: "شعب",
-        icon: 'fa fa-code-branch',
-    },
-    {
-        name: "DamageCenters",
-        title: "شعب دریافت خسارت",
-        icon: 'fa fa-code-branch',
-    },
-    {
-        name: "GeneralRule",
         title: "قوانین و مقررات",
         icon: 'fa fa-ruler',
+        children: [
+            {
+                name: "pdfs",
+                title: "بروشور",
+                icon: 'fa fa-file-pdf',
+            },
+            {
+                name: "Regulation",
+                title: "شرایط عضویت",
+                icon: 'fa fa-registered',
+            },
+            {
+                name: "GeneralCondition",
+                title: "شرایط عمومی",
+                icon: 'fa fa-reply-all',
+            },
+        ]
     },
+
     {
-        name: "RepresentationConditions",
-        title: "قوانین اخذ نمایندگی",
-        icon: 'fa fa-money-bill',
+        title: "شبکه فروش",
+        icon: 'fa fa-ruler',
+        children: [
+            {
+                name: "GeneralRule",
+                title: "قوانین و مقررات",
+                icon: 'fa fa-ruler',
+            },
+            {
+                name: "RepresentationConditions",
+                title: "قوانین اخذ نمایندگی",
+                icon: 'fa fa-money-bill',
+            },
+        ]
     },
-    /*{
-        name: "images",
-        title: "تصاویر",
-        icon: 'fa fa-image',
-    },*/
+
     {
-        name: "Regulation",
-        title: "شرایط عضویت",
-        icon: 'fa fa-registered',
+        title: "محصولات",
+        icon: 'fa fa-ruler',
+        children: [
+            {
+                name: "insurances",
+                title: "همه دسته محصولات",
+                icon: 'fa fa-shield-alt',
+            },
+            {
+                name: "insuranceInfos",
+                title: "جزئیات محصولات",
+                icon: 'fa fa-info',
+            },
+        ]
     },
+
     {
-        name: "GeneralCondition",
-        title: "شرایط عمومی",
-        icon: 'fa fa-reply-all',
+        title: "درباره ما",
+        icon: 'fa fa-ruler',
+        children: [
+            {
+                name: "jobPositions",
+                title: "جایگاه های شغلی",
+                icon: 'fa fa-chair',
+            },
+            {
+                name: "users_bime",
+                title: "پرسنل بیمه آرمان",
+                icon: 'fa fa-user',
+            },
+            {
+                name: "visions",
+                title: "چشم اندازها",
+                icon: 'fa fa-eye',
+            },
+            {
+                name: "visionAttributes",
+                title: "ویژگی های چشم انداز",
+                icon: 'fa fa-eye',
+            },
+        ]
     },
+
     {
-        name: "insurances",
-        title: "بیمه ها",
-        icon: 'fa fa-shield-alt',
-    },
-    {
-        name: "insuranceInfos",
-        title: "اطلاعات بیمه ها",
-        icon: 'fa fa-info',
-    },
-    {
-        name: "jobPositions",
-        title: "جایگاه های شغلی",
-        icon: 'fa fa-chair',
-    },
-    {
-        name: "pdfs",
-        title: "دانلود پی دی اف",
-        icon: 'fa fa-file-pdf',
-    },
-    {
-        name: "representationes",
-        title: "شعبه ها",
-        icon: 'fa fa-code-branch',
-    },
-    {
-        name: "revelations",
         title: "گزارشگری",
         icon: 'fa fa-list-alt',
+        children: [
+            {
+                name: "revelations",
+                title: "گزارشگری",
+                icon: 'fa fa-list-alt',
+            },
+            {
+                name: "revelationAttributes",
+                title: "ویژگی گزارشگری",
+                icon: 'fa fa-list-alt',
+            },
+        ]
     },
+
     {
-        name: "revelationAttributes",
-        title: "ویژگی گزارشگری",
-        icon: 'fa fa-list-alt',
-    },
-    {
-        name: "sliderItems",
-        title: "اسلایدر",
-        icon: 'fa fa-sliders-h',
-    },
-    {
-        name: "suggestions",
-        title: "پیشنهادات",
+        title: "فرم های سایت",
         icon: 'fa fa-speaker-deck',
+        children: [
+            {
+                name: "suggestions",
+                title: "پیشنهادات",
+                icon: 'fa fa-speaker-deck',
+            },
+            {
+                name: "ContactUs",
+                title: "فرم تماس",
+                icon: 'fa fa-phone-alt',
+            },
+        ]
     },
+
     {
-        name: "ContactUs",
-        title: "فرم تماس",
-        icon: 'fa fa-phone-alt',
+        title: "منو",
+        icon: 'fa fa-hamburger',
+        children: [
+            {
+                name: "MenuItems",
+                title: "مدیریت منو",
+                icon: 'fa fa-hamburger',
+            },
+            {
+                name: "FirstFooter",
+                title: "مدیریت فوتر ستون اول",
+                icon: 'fa fa-hamburger',
+            },
+            {
+                name: "SecondFooter",
+                title: "مدیریت فوتر ستون دوم",
+                icon: 'fa fa-hamburger',
+            },
+            {
+                name: "ThirdFooter",
+                title: "مدیریت فوتر ستون سوم",
+                icon: 'fa fa-hamburger',
+            },
+        ]
     },
+
     {
-        name: "users_bime",
-        title: "پرسنل بیمه آرمان",
+        title: "کاربران",
         icon: 'fa fa-user',
+        children: [
+            {
+                name: "users",
+                title: "ایجاد کاربران",
+                icon: 'fa fa-user',
+            },
+            {
+                name: "PersonalUsers",
+                title: "کاربران پرسنل",
+                icon: 'fa fa-user',
+            },
+            {
+                name: "VendorsUsers",
+                title: "کاربران نماینده",
+                icon: 'fa fa-user',
+            },
+        ]
     },
-    /*{
-        name: "vendorings",
-        title: "فروشنده ها",
-        icon: 'fa fa-user-check',
-    },*/
+
     {
-        name: "visions",
-        title: "چشم اندازها",
-        icon: 'fa fa-eye',
+        title: "بنر",
+        icon: 'fa fa-sliders-h',
+        children: [
+            {
+                name: "sliderItems",
+                title: "بنر",
+                icon: 'fa fa-sliders-h',
+            },
+        ]
     },
+
     {
-        name: "visionAttributes",
-        title: "ویژگی های چشم انداز",
-        icon: 'fa fa-eye',
-    },
-    /*{
-        name: "PersonnelPanelCategory",
-        title: "پنل پرسنل",
+        title: "پنل کاربری",
         icon: 'fa fa-user',
-    },*/
-    {
-        name: "PersonnelPanel",
-        title: "آیتم های پنل پرسنل",
-        icon: 'fa fa-user',
+        children: [
+            {
+                name: "PersonnelPanelCategory",
+                title: "دسته بندی پنل پرسنل",
+                icon: 'fa fa-user',
+            },
+            {
+                name: "PersonnelPanel",
+                title: "آیتم های دانلودی پنل پرسنل",
+                icon: 'fa fa-user',
+            },
+            {
+                name: "PersonalLinks",
+                title: "لینک های مفید پرسنل",
+                icon: 'fa fa-link',
+            },
+            {
+                name: "RepresentativePanelCategory",
+                title: "دسته بندی پنل نمایندگان",
+                icon: 'fa fa-user',
+            },
+            {
+                name: "RepresentativePanel",
+                title: "آیتم های دانلودی نماینده",
+                icon: 'fa fa-user',
+            },
+            {
+                name: "VendorsLinks",
+                title: "لینک های مفید نماینده",
+                icon: 'fa fa-link',
+            },
+        ]
     },
+
     {
-        name: "PersonalLinks",
-        title: "لینک های پنل پرسنل",
-        icon: 'fa fa-link',
-    },
-    {
-        name: "RepresentativePanelCategory",
-        title: "پنل نمایندگان",
-        icon: 'fa fa-user',
-    },
-    {
-        name: "RepresentativePanel",
-        title: "آیتم های پنل نمایندگان",
-        icon: 'fa fa-user',
-    },
-    {
-        name: "VendorsLinks",
-        title: "لینک های پنل نماینده",
-        icon: 'fa fa-link',
-    },
-    {
-        name: "SocialMedia",
         title: "شبکه های اجتماعی",
         icon: 'fa fa-file-medical-alt',
+        children: [
+            {
+                name: "SocialMedia",
+                title: "شبکه های اجتماعی",
+                icon: 'fa fa-file-medical-alt',
+            },
+        ]
     },
+
     {
-        name: "MenuItems",
-        title: "مدیریت منو",
-        icon: 'fa fa-hamburger',
-    },
-    {
-        name: "FirstFooter",
-        title: "مدیریت فوتر ستون اول",
-        icon: 'fa fa-hamburger',
-    },
-    {
-        name: "SecondFooter",
-        title: "مدیریت فوتر ستون دوم",
-        icon: 'fa fa-hamburger',
-    },
-    {
-        name: "ThirdFooter",
-        title: "مدیریت فوتر ستون سوم",
-        icon: 'fa fa-hamburger',
-    },
-    {
-        name: "users",
-        title: "ایجاد کاربران",
-        icon: 'fa fa-user',
-    },
-    {
-        name: "PersonalUsers",
-        title: "کاربران پرسنل",
-        icon: 'fa fa-user',
-    },
-    {
-        name: "VendorsUsers",
-        title: "کاربران نماینده",
-        icon: 'fa fa-user',
-    },
-    {
-        name: "setting",
         title: "تنظیمات سایت",
         icon: 'fa fa-cog',
-    }
+        children: [
+            {
+                name: "setting",
+                title: "تنظیمات سایت",
+                icon: 'fa fa-cog',
+            },
+        ]
+    },
 ]

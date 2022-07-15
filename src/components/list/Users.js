@@ -1,6 +1,13 @@
 import React, {useState } from 'react'
 import { BASE_SIGNUP_URL} from '../config/Config'
 import Cookies from "universal-cookie";
+import validator from 'validator';
+import {
+    numbers,
+    upperCaseLetters,
+    lowerCaseLetters,
+    specialCharacters,
+} from '../characters'
 
 
 const Users = () => {
@@ -49,10 +56,10 @@ const Users = () => {
     let handleSubmit = async (event) => {
 
         event.preventDefault();
-        console.log(firstName);
+        //console.log(firstName);
         setError(null);
         setSuccess(null);
-        fetch(BASE_SIGNUP_URL + "api/auth/signup?api-version=1.0", {
+        await fetch(BASE_SIGNUP_URL + "api/auth/signup?api-version=1.0", {
             method: "POST",
             headers: {
                 'accept': '*/*',
@@ -70,20 +77,50 @@ const Users = () => {
             }),
         })
             .then(response => {
-                if (!response.ok) {
+                console.log(response);
+                console.log(response.text());
+                /*if (!response.ok) {
                     throw new Error('عملیات مورد نظر اجرا نشد!');
+                } else if (response.ok) {
+                    throw new Error('کاربر با موفقیت افزوده شد')
+                }*/
+                if (response.status === 404) {
+                    throw new Error('آدرس api اشتباه است!');
+                } else if (response.status === 400) {
+                    //console.log(response.text());
+                    throw new Error('نام کاربری و یا رمز عبور از قبل وجود دارد!')
                 } else if (response.ok) {
                     throw new Error('کاربر با موفقیت افزوده شد')
                 }
                 setSuccess(success.message);
                 return response.json();
+                //return response.json().then(err => Promise.reject(err))
+
             })
             .then((response) => response.json())
             .then(console.log).catch((error) => {
+                console.log('error: ' + error)
             setError(error.message)
         });
 
     }
+
+    const [errorMessage, setErrorMessage] = useState('')
+
+    const validate = (value) => {
+
+        if (validator.isStrongPassword(value, {
+            minLength: 7, minLowercase: 1,
+            minUppercase: 1, minNumbers: 1, minSymbols: 1
+        })) {
+            setErrorMessage(<p className="strong_pass">رمز عبور قوی است</p>)
+
+        } else {
+            setErrorMessage(<p className="weak_pass">رمز عبور قوی تر انتخاب کنید!</p>)
+        }
+
+    }
+
 
     return (
         <div className="user_page">
@@ -93,42 +130,57 @@ const Users = () => {
                 <div>
                     <label htmlFor="firstName">
                         نام
+                        <abbr className="required" title="ضروری" style={{color: 'red'}}>*</abbr>
                     </label>
                     <input type="text" name="firstName" id="firstName" defaultValue={firstName} onChange={nameChangeHandler} placeholder="نام" />
                 </div>
                 <div>
                     <label htmlFor="lastName">
                         نام خانوادگی
+                        <abbr className="required" title="ضروری" style={{color: 'red'}}>*</abbr>
                     </label>
                     <input type="text" name="lastName" id="lastName" defaultValue={lastName} onChange={familyChangeHandler} placeholder="نام خانوادگی" />
                 </div>
                 <div>
                     <label htmlFor="phoneNumber">
                         شماره همراه
+                        <abbr className="required" title="ضروری" style={{color: 'red'}}>*</abbr>
                     </label>
-                    <input type="text" name="phoneNumber" id="phoneNumber" defaultValue={phoneNumber} onChange={mobileChangeHandler} placeholder="شماره همراه" />
+                    <input type="tel" min="8" max="11" maxLength="11" name="phoneNumber" id="phoneNumber" defaultValue={phoneNumber} onChange={mobileChangeHandler} placeholder="شماره همراه" />
                 </div>
                 <div>
                     <label htmlFor="userName">
                         نام کاربری
+                        <abbr className="required" title="ضروری" style={{color: 'red'}}>*</abbr>
                     </label>
                     <input type="text" name="userName" id="userName" defaultValue={userName} onChange={usernameChangeHandler} placeholder="نام کاربری" />
                 </div>
                 <div>
                     <label htmlFor="password">
                         رمز عبور
+                        <abbr className="required" title="ضروری" style={{color: 'red'}}>*</abbr>
+                        <p>
+                            رمز عبور باید حداقل 8 کاراکتر و شامل حروف بزرگ، کوچک و کاراکتر باشد
+                        </p>
                     </label>
-                    <input type="password" name="password" id="password" defaultValue={password} onChange={passwordChangeHandler} placeholder="رمز عبور" />
+                    <input type="password" name="password" id="password" defaultValue={password} onKeyDown={(e) => validate(e.target.value)} onChange={passwordChangeHandler} placeholder="رمز عبور" />
+                    {errorMessage === '' ? null :
+                        <span style={{
+                            fontWeight: 'bold',
+                        }}>{errorMessage}</span>}
+
                 </div>
                 <div>
                     <label htmlFor="email">
                         ایمیل
+                        <abbr className="required" title="ضروری" style={{color: 'red'}}>*</abbr>
                     </label>
                     <input type="email" name="email" id="email" defaultValue={email} onChange={emailChangeHandler} placeholder="ایمیل" />
                 </div>
                 <div>
                     <label htmlFor="accessLevel">
                         سطح دسترسی
+                        <abbr className="required" title="ضروری" style={{color: 'red'}}>*</abbr>
                     </label>
                     {/*<input type="number" name="accessLevel" id="accessLevel" defaultValue={accessLevel} onChange={accessLevelChangeHandler} placeholder="سطح دسترسی" />*/}
                     <select name="accessLevel" id="accessLevel" defaultValue={accessLevel} onChange={accessLevelChangeHandler}>
