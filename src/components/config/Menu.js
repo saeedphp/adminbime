@@ -188,7 +188,7 @@ export const Menu = [
         icon: 'fa fa-hamburger',
         children: [
             {
-                name: "MenuItems",
+                name: "menu",
                 title: "مدیریت منو",
                 icon: 'fa fa-hamburger',
             },
