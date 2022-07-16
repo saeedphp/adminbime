@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { BASE_IMAGE_URL, BASE_URL } from '../config/Config'
+import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
+import {BASE_IMAGE_URL, BASE_URL} from '../config/Config'
 import $ from "jquery";
 import Cookies from "universal-cookie";
 
@@ -28,33 +28,33 @@ const FileElement = ({field, data}) => {
             },
             body: data
         })
-        .then(async response => {
-            const data = await response.json();
+            .then(async response => {
+                const data = await response.json();
 
-            // setRecord(data.result);
-            console.log(data);
-            let hidden_input = document.getElementById(field.name + '-input');
-            //hidden_input.value = data.result;
-            hidden_input.setAttribute('value', data.result)
-            console.log(hidden_input);
-            setShowLoading(false);
-            setShowOk(true);
-        })
-        .catch(error => {
-            // this.setState({ errorMessage: error.toString() });
-            console.error('There was an error!', error);
-        });
+                // setRecord(data.result);
+                console.log(data);
+                let hidden_input = document.getElementById(field.name + '-input');
+                //hidden_input.value = data.result;
+                hidden_input.setAttribute('value', data.result)
+                console.log(hidden_input);
+                setShowLoading(false);
+                setShowOk(true);
+            })
+            .catch(error => {
+                // this.setState({ errorMessage: error.toString() });
+                console.error('There was an error!', error);
+            });
     }
 
-    function validateFileType(){
+    function validateFileType() {
         var fileName = document.querySelector(".inputFile").value;
         var idxDot = fileName.lastIndexOf(".") + 1;
         var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+        if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
             //TO DO
-        }else{
+        } else {
             alert("Only jpg/jpeg and png files are allowed!");
-            fileName.target.value='';
+            fileName.target.value = '';
             return;
         }
     }
@@ -70,11 +70,14 @@ const FileElement = ({field, data}) => {
     return (
         <>
             <a href={data ? BASE_IMAGE_URL + data[field.get.field][field.get.url] : ''}>{data ? data[field.get.field][field.get.url] : ''}</a>
-            <input name={field.name} type="hidden"  id={field.name + '-input'}  />
+            <input name={field.name} type="hidden" id={field.name + '-input'} defaultValue={data ? data[field.get.field][field.get.value] : 0}/>
             <div className='input-group'>
-                <input accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp" type="file" className="form-control inputFile" id={field.name} placeholder={field.title} onChange={inputChange} />
-                <span className={`input-group-text ${showLoading ? 'sending' : 'sent'}`} style={{display: showLoading || showOk ? "inline" : "none"}}>
-                    <div style={{ display: showLoading ? "inline" : "none" }}>
+                <input accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp"
+                       type="file" className="form-control inputFile" id={field.name} placeholder={field.title}
+                       onChange={inputChange}/>
+                <span className={`input-group-text ${showLoading ? 'sending' : 'sent'}`}
+                      style={{display: showLoading || showOk ? "inline" : "none"}}>
+                    <div style={{display: showLoading ? "inline" : "none"}}>
                         در حال ارسال
                     </div>
                     <span style={{display: showOk ? "inline" : "none"}}>ارسال شد</span>
