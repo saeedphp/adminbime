@@ -804,16 +804,6 @@ export const Elements = {
                 title: "عنوان"
             },
             {
-                name: "customFileId",
-                title: "فایل pdf",
-                type: "pdf",
-                get: {
-                    field: "imageGetResponse",
-                    value: "id",
-                    url: "url"
-                }
-            },
-            {
                 name: "ordering",
                 title: "ترتیب",
                 type: "hidden",
