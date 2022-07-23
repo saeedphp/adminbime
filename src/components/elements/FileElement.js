@@ -70,11 +70,18 @@ const FileElement = ({field, data}) => {
     return (
         <>
             <a href={data ? BASE_IMAGE_URL + data[field.get.field][field.get.url] : ''}>{data ? data[field.get.field][field.get.url] : ''}</a>
-            <input name={field.name} type="hidden" id={field.name + '-input'} defaultValue={data ? data[field.get.field][field.get.value] : 0}/>
+            {!data && (
+                <input name={field.name} type="hidden" id={field.name + '-input'} />
+            )}
+            {
+                data && (
+                    <input name={field.name} type="hidden" id={field.name + '-input'} defaultValue={data ? data[field.get.field][field.get.value] : ''} />
+                )
+            }
             <div className='input-group'>
                 <input accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp"
                        type="file" className="form-control inputFile" id={field.name} placeholder={field.title}
-                       onChange={inputChange}/>
+                       onChange={handleChange}/>
                 <span className={`input-group-text ${showLoading ? 'sending' : 'sent'}`}
                       style={{display: showLoading || showOk ? "inline" : "none"}}>
                     <div style={{display: showLoading ? "inline" : "none"}}>

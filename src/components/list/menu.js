@@ -111,7 +111,7 @@ const Menu = () => {
                         </tr>
                         </thead>
                         <tbody>
-                        {menu.map((item, i) => {
+                        {menu.filter((item) => (item.parentId === null && item.firstFooter !== true && item.secendFooter !== true && item.thirdFooter !== true)).map((item, i) => {
                             return (
                                 <tr key={i}>
                                     <td>

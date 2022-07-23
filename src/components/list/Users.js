@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, {useState, useRef } from 'react'
 import { BASE_SIGNUP_URL} from '../config/Config'
 import Cookies from "universal-cookie";
 import validator from 'validator';
@@ -11,6 +11,8 @@ import {
 
 
 const Users = () => {
+
+    const form = useRef(null);
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -59,6 +61,7 @@ const Users = () => {
         //console.log(firstName);
         setError(null);
         setSuccess(null);
+        form.current.reset();
         await fetch(BASE_SIGNUP_URL + "api/auth/signup?api-version=1.0", {
             method: "POST",
             headers: {
@@ -77,6 +80,7 @@ const Users = () => {
             }),
         })
             .then(response => {
+
                 console.log(response);
                 console.log(response.text());
                 /*if (!response.ok) {
@@ -124,7 +128,7 @@ const Users = () => {
 
     return (
         <div className="user_page">
-            <form id='page-form' onSubmit={handleSubmit} method="POST">
+            <form ref={form} id='page-form' onSubmit={handleSubmit} method="POST">
                 {error && <p className="login_error">{error}</p>}
                 {success && <p className="login_success">{success}</p>}
                 <div>

@@ -780,7 +780,7 @@ export const Elements = {
         ]
     },
     Regulation: {
-        metaTitle: 'عنوان های شغلی',
+        metaTitle: 'شرایط عضویت',
         list_route: "cms/regulation/active?pageIndex=0&pageSize=50",
         detail_route: "cms/regulation/",
         create_route: "cms/regulation/",
@@ -812,14 +812,20 @@ export const Elements = {
             {
                 name: "isActive",
                 title: "فعال بودن",
-                type: "boolean"
+                type: 'boolean'
             },
             {
                 name: "cultureLcid",
                 title: "شناسه زبان",
                 type: "hidden",
-                default: 1065
+                default: 1065,
             },
+            {
+                name: "customFileId",
+                title: "فایل مربوطه",
+                type: "hidden",
+                default: 400,
+            }
         ]
     },
     insurances: {
@@ -885,12 +891,8 @@ export const Elements = {
             {
                 name: "imageId",
                 title: "تصویر",
-                type: "image",
-                get: {
-                    field: "imageInfo",
-                    value: "id",
-                    url: "url"
-                }
+                type: "hidden",
+                default: 400,
             },
             {
                 name: "iconId",
@@ -988,10 +990,6 @@ export const Elements = {
                 title: "عنوان"
             },
             {
-                name: "category",
-                title: "دسته بندی"
-            },
-            {
                 title: 'ویرایش',
                 type: 'btn',
             },
@@ -1007,7 +1005,8 @@ export const Elements = {
             },
             {
                 name: "category",
-                title: "دسته بندی"
+                title: "دسته بندی",
+                type: "hidden",
             },
             {
                 name: "ordering",
@@ -1126,6 +1125,12 @@ export const Elements = {
                 title: "شماره تماس"
             },
             {
+                name: "stateInfo",
+                title: "نام استان",
+                type: "object",
+                object_field: "name"
+            },
+            {
                 title: 'ویرایش',
                 type: 'btn',
             },
@@ -1219,6 +1224,12 @@ export const Elements = {
             {
                 name: "phoneNumber",
                 title: "شماره تماس"
+            },
+            {
+                name: "stateInfo",
+                title: "نام استان",
+                type: "object",
+                object_field: "name"
             },
             {
                 title: 'ویرایش',
@@ -1330,12 +1341,8 @@ export const Elements = {
             {
                 name: "customeFileId",
                 title: "فایل pdf",
-                type: "pdf",
-                get: {
-                    field: "imageGetResponse",
-                    value: "id",
-                    url: "url"
-                }
+                type: "hidden",
+                default: 400,
             },
             {
                 name: "isActive",
@@ -2046,7 +2053,8 @@ export const Elements = {
             {
                 name: "ordering",
                 title: "ترتیب",
-                type: "number",
+                type: "hidden",
+                default: 0,
             },
             {
                 name: "isActive",
@@ -2105,16 +2113,6 @@ export const Elements = {
                 type: "boolean",
             },
             {
-                name: "iconId",
-                title: "آیکون",
-                type: "image",
-                get: {
-                    field: "iconInfo",
-                    value: "id",
-                    url: "url"
-                }
-            },
-            {
                 title: 'ویرایش',
                 type: 'btn',
             },
@@ -2141,7 +2139,7 @@ export const Elements = {
                 name: "ordering",
                 title: "ترتیب",
                 type: "hidden",
-                default: 0,
+                default: 0
             },
             {
                 name: "isActive",
@@ -2153,16 +2151,6 @@ export const Elements = {
                 title: "شناسه زبان",
                 type: "hidden",
                 default: 1065
-            },
-            {
-                name: "iconId",
-                title: "آیکون",
-                type: "image",
-                get: {
-                    field: "iconInfo",
-                    value: "id",
-                    url: "url"
-                }
             },
             {
                 name: "fileId",
@@ -2281,7 +2269,7 @@ export const Elements = {
                 title: "دسته",
                 type: "dropdown",
                 dropdown: {
-                    route: "cms/representativePanel/active?pageIndex=0&pageSize=100",
+                    route: "cms/representativePanelCategory/active?pageIndex=0&pageSize=100",
                     value: "id",
                     text: "title"
                 },
@@ -2321,7 +2309,7 @@ export const Elements = {
                 title: "پنل نماینده",
                 type: "boolean",
             },
-            {
+            /*{
                 name: "iconId",
                 title: "آیکون",
                 type: "image",
@@ -2330,7 +2318,7 @@ export const Elements = {
                     value: "id",
                     url: "url"
                 }
-            },
+            },*/
             {
                 title: 'ویرایش',
                 type: 'btn',
@@ -2371,7 +2359,7 @@ export const Elements = {
                 type: "hidden",
                 default: 1065
             },
-            {
+            /*{
                 name: "iconId",
                 title: "آیکون",
                 type: "image",
@@ -2380,7 +2368,7 @@ export const Elements = {
                     value: "id",
                     url: "url"
                 }
-            },
+            },*/
             {
                 name: "fileId",
                 title: "فایل pdf",
