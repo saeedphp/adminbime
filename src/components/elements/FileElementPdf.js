@@ -4,7 +4,7 @@ import {BASE_IMAGE_URL, BASE_URL} from '../config/Config'
 import $ from "jquery";
 import Cookies from "universal-cookie";
 
-const FileElement = ({field, data}) => {
+const FileElementPdf = ({field, data}) => {
 
     const cookies = new Cookies();
     const token = cookies.get('token');
@@ -13,10 +13,10 @@ const FileElement = ({field, data}) => {
     const [showOk, setShowOk] = useState(false);
 
     function validateFileType() {
-        let fileName = document.querySelector(".inputFile").value;
+        let fileName = document.querySelector(".inputFilePdf").value;
         let idxDot = fileName.lastIndexOf(".") + 1;
         let extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-        if (extFile === "jpg" || extFile === "jpeg" || extFile === "png") {
+        if (extFile == "pdf") {
 
             var input = document.getElementById(field.name);
 
@@ -38,7 +38,7 @@ const FileElement = ({field, data}) => {
 
                     // setRecord(data.result);
                     console.log(data);
-                    let hidden_input = document.getElementById(field.name + '-input');
+                    let hidden_input = document.getElementById(field.name + '-inputPdf');
                     //hidden_input.value = data.result;
                     hidden_input.setAttribute('value', data.result)
                     console.log(hidden_input);
@@ -51,7 +51,7 @@ const FileElement = ({field, data}) => {
                 });
 
         } else {
-            alert("فقط فایل هایی با پسوند png, jpg و jpeg قابل قبول هستند");
+            alert("فقط فایل هایی با پسوند pdf قابل قبول هستند");
             fileName.target.value = '';
             return;
         }
@@ -68,17 +68,16 @@ const FileElement = ({field, data}) => {
         <>
             <a href={data ? BASE_IMAGE_URL + data[field.get.field][field.get.url] : ''}>{data ? data[field.get.field][field.get.url] : ''}</a>
             {!data && (
-                <input name={field.name} type="hidden" id={field.name + '-input'}/>
+                <input name={field.name} type="hidden" id={field.name + '-inputPdf'}/>
             )}
             {
                 data && (
-                    <input name={field.name} type="hidden" id={field.name + '-input'}
+                    <input name={field.name} type="hidden" id={field.name + '-inputPdf'}
                            defaultValue={data ? data[field.get.field][field.get.value] : ''}/>
                 )
             }
             <div className='input-group'>
-                <input accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp"
-                       type="file" className="form-control inputFile" id={field.name} placeholder={field.title}
+                <input type="file" className="form-control inputFilePdf" id={field.name} placeholder={field.title}
                        onChange={inputChange}/>
                 {validateFileType && (
                     <span className={`input-group-text ${showLoading ? 'sending' : 'sent'}`}
@@ -98,4 +97,4 @@ const FileElement = ({field, data}) => {
     )
 }
 
-export default FileElement
+export default FileElementPdf

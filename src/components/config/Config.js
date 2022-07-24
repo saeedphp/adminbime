@@ -541,7 +541,7 @@ export const Elements = {
             {
                 name: "customFileId",
                 title: "فایل pdf",
-                type: "pdf",
+                type: "pdfFile",
                 get: {
                     field: "imageGetResponse",
                     value: "id",
@@ -672,7 +672,7 @@ export const Elements = {
         ]
     },
     RepresentationConditions: {
-        metaTitle: 'عنوان های شغلی',
+        metaTitle: 'شرایط نمایندگی',
         list_route: "cms/representationCondition/active?pageIndex=0&pageSize=100",
         detail_route: "cms/representationCondition/",
         create_route: "cms/representationCondition/",
@@ -1085,16 +1085,6 @@ export const Elements = {
                 default: 1065
             },
             {
-                name: "customFileId",
-                title: "فایل pdf",
-                type: "pdf",
-                get: {
-                    field: "imageGetResponse",
-                    value: "id",
-                    url: "url"
-                }
-            },
-            {
                 name: "imageId",
                 title: "تصویر",
                 type: "image",
@@ -1103,7 +1093,17 @@ export const Elements = {
                     value: "id",
                     url: "url"
                 }
-            }
+            },
+            {
+                name: "customFileId",
+                title: "فایل pdf",
+                type: "pdfFile",
+                get: {
+                    field: "imageGetResponse",
+                    value: "id",
+                    url: "url"
+                }
+            },
         ]
     },
     Representationes: {
@@ -1390,7 +1390,7 @@ export const Elements = {
             {
                 name: "customFileId",
                 title: "فایل pdf",
-                type: "pdf",
+                type: "pdfFile",
                 get: {
                     field: "imageGetResponse",
                     value: "id",
@@ -2084,7 +2084,7 @@ export const Elements = {
             {
                 name: "customFileId",
                 title: "فایل pdf",
-                type: "pdf",
+                type: "pdfFile",
                 get: {
                     field: "imageGetResponse",
                     value: "id",
@@ -2281,7 +2281,7 @@ export const Elements = {
             {
                 name: "customFileId",
                 title: "فایل pdf",
-                type: "pdf",
+                type: "pdfFile",
                 get: {
                     field: "imageGetResponse",
                     value: "id",

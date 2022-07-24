@@ -10,6 +10,7 @@ import Hidden from './elements/Hidden';
 import Multiple from "./elements/Multiple";
 import LevelDropdown from "./elements/LevelDropdown";
 import CheckboxHidden from "./elements/CheckboxHidden";
+import FileElementPdf from "./elements/FileElementPdf";
 
 const Element = ({field, data}) => {
     switch (field.type) {
@@ -29,6 +30,8 @@ const Element = ({field, data}) => {
             return (<FileElement field={field} data={data} />)
         case 'pdf':
             return (<FileElement field={field} data={data} />)
+        case 'pdfFile':
+            return (<FileElementPdf field={field} data={data} />)
         case 'boolean':
             return (<Checkbox field={field} data={data} />)
         case 'booleanhidden':
