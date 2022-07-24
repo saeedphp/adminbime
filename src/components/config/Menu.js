@@ -133,7 +133,7 @@ export const Menu = [
             },
             {
                 name: "users_bime",
-                title: "پرسنل بیمه آرمان",
+                title: "مدیریت و اعضای هیئت مدیره بیمه آرمان",
                 icon: 'fa fa-user',
             },
             {

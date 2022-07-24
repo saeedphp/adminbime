@@ -1589,7 +1589,7 @@ export const Elements = {
         ],
     },
     users_bime: {
-        metaTitle: 'پرسنل بیمه آرمان',
+        metaTitle: 'مدیریت و اعضای هیئت مدیره بیمه آرمان',
         list_route: "cms/user/active?pageIndex=0&pageSize=100",
         detail_route: "cms/user/",
         create_route: "cms/user/",
