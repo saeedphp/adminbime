@@ -45,6 +45,11 @@ export const Menu = [
         icon: 'fa fa-hospital',
         children: [
             {
+                name: "cities",
+                title: "شهرها",
+                icon: 'fa fa-city',
+            },
+            {
                 name: "HealthCenterPdfs",
                 title: "pdf مراکز درمانی",
                 icon: 'fa fa-file-pdf',

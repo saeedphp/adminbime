@@ -10,6 +10,7 @@ import { BASE_URL } from "./components/config/Config";
 import Users from "./components/list/Users";
 import Menu from "./components/list/menu";
 import MenuChildren from "./components/list/[menuId]";
+import Reset from "./components/form/Reset";
 
 function App() {
   const cookies = new Cookies();
@@ -72,6 +73,7 @@ function App() {
               <Route path="/list/menu" element={<Menu />} />
               <Route path="/list/menu/:id" element={<MenuChildren />} />
               <Route path="/form/:model/:id" element={<Form />} />
+              <Route path="/form/reset/:id" element={<Reset />} />
                 <Route path="/create/:model/" element={<Form />} />
             </Routes>
           </BrowserRouter>

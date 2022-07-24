@@ -50,10 +50,6 @@ export const Elements = {
                 title: "نام شهر"
             },
             {
-                name: "description",
-                title: "توضیحات"
-            },
-            {
                 name: "stateInfo",
                 title: "نام استان",
                 type: "object",
@@ -76,7 +72,8 @@ export const Elements = {
             {
                 name: "description",
                 title: "توضیحات",
-                type: "textarea"
+                type: "hidden",
+                default: "desc",
             },
             {
                 name: "stateId",
@@ -2868,6 +2865,10 @@ export const Elements = {
                 type: 'btn',
             },
             {
+                title: 'ویرایش رمز',
+                type: 'resetPassword',
+            },
+            {
                 title: 'حذف',
                 type: 'removeBtn',
             },
@@ -2938,6 +2939,10 @@ export const Elements = {
             {
                 title: 'ویرایش',
                 type: 'btn',
+            },
+            {
+                title: 'ویرایش رمز',
+                type: 'resetPassword',
             },
             {
                 title: 'حذف',

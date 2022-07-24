@@ -195,6 +195,13 @@ const List = () => {
                                                               to={`/form/${model}/${data_item.id}`}>ویرایش</Link>
                                                     </td>
                                                 )
+                                            case 'resetPassword' :
+                                                return (
+                                                    <td key={j}>
+                                                        <Link className='btn btn-light me-3'
+                                                              to={`/form/reset/${data_item.id}`}>ویرایش رمز</Link>
+                                                    </td>
+                                                )
                                             case 'removeBtn' :
                                                 return (
                                                     <td key={j}>
