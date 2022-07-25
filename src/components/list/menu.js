@@ -3,6 +3,7 @@ import {BASE_URL} from "../config/Config";
 import {Link} from "react-router-dom";
 import Swal from "sweetalert2";
 import Cookies from 'universal-cookie';
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
 const Menu = () => {
 

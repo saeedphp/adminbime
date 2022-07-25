@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie'
 import Swal from 'sweetalert2'
 import {Spinner} from "react-bootstrap";
 import PageTitle from "../PageTitle";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
 const List = () => {
     const cookies = new Cookies();
@@ -166,7 +167,12 @@ const List = () => {
                         <input type="text" id="myInput"  onChange={search} placeholder="جستجو..."/>
                         <i className="fa fa-search"></i>
                     </div>
-
+                    {currPath === BASE_ADD_USER_URL + 'list/ContactUs' && (
+                        <ReactHTMLTableToExcel table="myTable" filename="Export ContactUs Data" sheet="Sheet" buttonText="Excel" className="download-table-xls-button" />
+                    )}
+                    {currPath === BASE_ADD_USER_URL + 'list/suggestions' && (
+                        <ReactHTMLTableToExcel table="myTable" filename="Export ContactUs Data" sheet="Sheet" buttonText="Excel" className="download-table-xls-button" />
+                    )}
                     {error && <p className="login_error">{error}</p>}
                     <table id="myTable" className='table table-bordered table-striped'>
                         <thead>

@@ -6,7 +6,6 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Cookies from 'universal-cookie';
 import { useState } from "react";
 import logo from './assets/images/logo.webp';
-import { BASE_URL } from "./components/config/Config";
 import Users from "./components/list/Users";
 import Menu from "./components/list/menu";
 import MenuChildren from "./components/list/[menuId]";
